@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="section">
+        <div class="well">
+            <div style="margin-bottom: 15px" class="row">
+                <form method="GET">
+                    <div class="col-md-4 col-md-offset-6 col-xs-6 col-xs-offset-2">
+                        <input name="search" title="Search for an item here" placeholder="Search" class="form-control" type="text" id="search">
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                        <button id="button" class="btn btn-default btn-block">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="mainTable">
+                <div layout:fragment="list_detail"></div>
+            </div>
+            <div class="row">
+                <center>
+                    <ul class="pagination">
+                        <li><a id="previous" style="display: none;">Prev</a></li>
+                        <li class="hidden-xs"><a id="prev2" style="display: none;">-1</a></li>
+                        <li><a id="prev1" style="display: none;">0</a></li>
+                        <li class="active"><a id="current">1</a></li>
+                        <li><a id="next1">2</a></li>
+                        <li class="hidden-xs"><a id="next2">3</a></li>
+                        <li><a id="next">Next</a></li>
+                    </ul>
+                </center>
+            </div>
+            <script type="text/javascript">
+                var page = 1;
+                var lastpage = 134;
+                var type = "npc";
+                var search = "";
+                jQuery(document).ready(function() {
+                    jQuery("#previous").click(function() {
+                        movePage(type, search, page, lastpage, -1);
+                        page -= 1;
+                    });
+                    jQuery("#prev2").click(function() {
+                        movePage(type, search, page, lastpage, -2);
+                        page -= 2;
+                    });
+                    jQuery("#prev1").click(function() {
+                        movePage(type, search, page, lastpage, -1);
+                        page -= 1;
+                    });
+                    jQuery("#next1").click(function() {
+                        movePage(type, search, page, lastpage, 1);
+                        page += 1;
+                    });
+                    jQuery("#next2").click(function() {
+                        movePage(type, search, page, lastpage, 2);
+                        page += 2;
+                    });
+                    jQuery("#next").click(function() {
+                        movePage(type, search, page, lastpage, 1);
+                        page += 1;
+                    });
+                });
+                refresh(page, lastpage)
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>

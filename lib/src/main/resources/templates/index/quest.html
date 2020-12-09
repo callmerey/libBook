@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list2.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="list_detail">
+        <div class="col-xs-12">
+            <table class="table text-center table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="max-width: 20%">
+                            NPC
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th style="max-width: 30%">
+                            Quest
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=2101"><object class="img-responsive" > <img th:src="@{/images/quest1.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=2101">Heena</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1000">Borrowing Sera's Mirror</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=2100"><object class="img-responsive" > <img th:src="@{/images/quest2.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=2100">Sera</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1001">Bringing a Mirror to Heena</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=2102"><object class="img-responsive" > <img th:src="@{/images/quest3.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=2102">Nina</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1003">What Sen wants to eat</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=2001"><object class="img-responsive" > <img th:src="@{/images/quest4.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=2001">Sen</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1004">Returning to Nina</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=2103"><object class="img-responsive" > <img th:src="@{/images/quest5.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=2103">Maria</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1005">Letter for Lucas</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=12000"><object class="img-responsive" > <img th:src="@{/images/quest6.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=12000">Lucas</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1006">Lucas' Reply</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=20002"><object class="img-responsive" > <img th:src="@{/images/quest7.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=20002">Biggs</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1007">Bigg's Collection of Items</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=10000"><object class="img-responsive" ><img th:src="@{/images/quest8.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=10000">Pio</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1008">Pio's Collecting Recycled Goods</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=12101"><object class="img-responsive" > <img th:src="@{/images/quest9.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=12101">Rain</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1009">Rain's Maple Quiz 1</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/npc?id=12101"><object class="img-responsive" > <img th:src="@{/images/quest10.PNG}" alt=""></object></a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/npc?id=12101">Rain</a>
+                        </td>
+                        <td>
+                            <a href="/lib/quest?id=1010">Rain's Maple Quiz 2</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

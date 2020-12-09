@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="section">
+        <div class="container">
+            <div class="well">
+                <div class="row">
+                    <div id="mainTable">
+                        <div class="col-lg-5 col-md-6">
+                            <table class="table table-sm text-center table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-radius: 25px" colspan="6">
+                                            <div>Sword</div>
+                                            <div style="color: #FF9900"></div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #262626; vertical-align: middle;" colspan="3">
+                                            <center><object style="width: 40%; image-rendering: pixelated;" class="img-responsive"><img th:src="@{/images/detail1.PNG}" alt=""></object></center>
+                                        </td>
+                                        <td style="border-radius: 15px" colspan="3">
+                                            <p>
+                                                Req LVL: 0
+                                            </p>
+                                            <p>
+                                                Req STR: 0
+                                            </p>
+                                            <p>
+                                                Req DEX: 0
+                                            </p>
+                                            <p>
+                                                Req INT: 0
+                                            </p>
+                                            <p>
+                                                Req LUK: 0
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr style="font-size: 90%">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Beginner
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Warrior
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Magician
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Bowman
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Thief
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Pirate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-radius: 15px; text-align: left" colspan="6">
+                                            <p>
+                                                Category: One Handed Sword
+                                            </p>
+                                            <p>
+                                                Attack Speed: Fast (4)
+                                            </p>
+                                            <p>
+                                                Weapon Attack: 17 (15 - 19)
+                                            </p>
+                                            <p>
+                                                Number of Upgrades Available: 7
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-radius: 15px; text-align: center" colspan="6">
+                                            Sell Price: 1
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div style="border-radius: 15px" class="panel">
+                                <div style="border-radius: 15px" class="panel-heading">
+                                    <ul style="margin-bottom: 10px;" class="nav nav-tabs">
+                                        <li id="1" class="active">
+                                            <a style="background-color: #1a1a1a;">Drops</a>
+                                        </li>
+                                        <li id="2" class="">
+                                            <a>Sold By</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="loading" align="center" hidden=""><img src="/static/images/CreepymushText.gif"></div>
+                                <div id="infoTable">
+                                    <div class="panel panel-body">
+                                        <p>Dropped By</p>
+                                        <p>
+                                        </p><a style="text-decoration: underline" href="/lib/monster?id=130101">Red Snail</a> ,
+                                        <a style="text-decoration: underline" href="/lib/monster?id=100100">Snail</a>
+                                        <table class="table table-bordered text-center">
+
+                                        </table>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    var type = "equip";
+                    var id = 1302000;
+                    var active = "#1";
+                    jQuery(document).ready(function() {
+                        jQuery("#1").click(function() {
+                            if (active == "#1") return;
+                            changeTab(id, type, 1);
+                            changeActiveTab(active, "#1");
+                            active = "#1";
+                        });
+                        jQuery("#2").click(function() {
+                            if (active == "#2") return;
+                            changeTab(id, type, 2);
+                            changeActiveTab(active, "#2");
+                            active = "#2";
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

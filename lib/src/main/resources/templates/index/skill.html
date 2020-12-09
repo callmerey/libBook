@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list2.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="list_detail">
+        <div class="col-xs-12">
+            <table class="table text-center table-bordered">
+                <tbody>
+                    <tr>
+                        <th>
+                            Image
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Job
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0000008">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill1.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0000008">Follow the Lead</a>
+                        </td>
+                        <td>
+                            Allows one to lead up to 3 pets at once.<br><span style="color:#FF9900">Passive skill</span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001000">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill2.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001000">Three Snails</a>
+                        </td>
+                        <td>
+                            [Master Level : 3]<br>Hurls snail shells to attack monsters from long distance.
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001001">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill3.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001001">Recovery</a>
+                        </td>
+                        <td>
+                            [Master Level : 3]<br>Enables the user to recover HP constantly for 30 sec.<br><span style="color:#FF9900">Cooldown: 2 min.</span>
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001002">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill4.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001002">Nimble Feet</a>
+                        </td>
+                        <td>
+                            [Master Level : 3]<br>Enables the character to move around quickly for a short amount of time.<br><span style="color:#FF9900">Cooldown: 1 min.</span>
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001003">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill5.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001003">Legendary Spirit</a>
+                        </td>
+                        <td>
+                            [Master Level : 1]<br>Uses the spirit of a legend to use a scroll on an item that cannot be normally equipped by the character.
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001004">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill6.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001004">Monster Rider</a>
+                        </td>
+                        <td>
+                            [Master Level : 1]<br>Enables one to ride on a tamed monster and use it as a method of transportation.
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001005">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill7.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001005">Echo of Hero</a>
+                        </td>
+                        <td>
+                            [Master Level : 1]<br> Increase weapon attack and magic attack on all players around.<br><span style="color:#FF9900">Cooldown: 2 hours.</span>
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=0001006">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill8.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=0001006">Jump Down</a>
+                        </td>
+                        <td>
+                            [Master Level : 1]nJump downward.
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=1000000">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill9.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=1000000">Improved HP Recovery</a>
+                        </td>
+                        <td>
+                            [Master Level : 16]<br>Recover additional HP every 10 sec. while standing still.<br><span style="color:#FF9900">Passive skill</span>
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/skill?id=1000001">
+                                    <object class="img-responsive"> <img th:src="@{/images/skill10.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/skill?id=1000001">Improved MaxHP Increase</a>
+                        </td>
+                        <td>
+                            [Master Level : 10] This skill boosts up the amount of increase on MaxHP after each Level UP, or AP used on MaxHP.<br><span style="color:#FF9900">Passive skill</span>
+                        </td>
+                        <td>
+                            Warrior
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

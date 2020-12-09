@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="list_detail">
+        <div class="row">
+            <div id="mainTable">
+                <div class="col-xs-12">
+                    <table class="table text-center table-bordered">
+                        <tbody>
+                            <tr>
+                                <th style="width: 30%">
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th style="width: 10%">
+                                    Level
+                                </th>
+                                <th style="width: 10%">
+                                    EXP
+                                </th>
+                                <th style="width: 10%">
+                                    HP
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0100100"><object class="img-responsive"><img th:src="@{/images/monster1.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0100100">Snail</a>
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0100101"><object class="img-responsive"><img th:src="@{/images/monster2.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0100101">Blue Snail</a>
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0120100"><object class="img-responsive"><img th:src="@{/images/monster3.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0120100">Shroom</a>
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    5
+                                </td>
+                                <td>
+                                    20
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0130100"><object class="img-responsive"><img th:src="@{/images/monster4.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0130100">Stump</a>
+                                </td>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                                <td>
+                                    40
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0130101"><object class="img-responsive"><img th:src="@{/images/monster5.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0130101">Red Snail</a>
+                                </td>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    8
+                                </td>
+                                <td>
+                                    40
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0210100"><object class="img-responsive"><img th:src="@{/images/monster6.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=0210100">Slime</a>
+                                </td>
+                                <td>
+                                    6
+                                </td>
+                                <td>
+                                    10
+                                </td>
+                                <td>
+                                    50
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=1110100"><object class="img-responsive"><img th:src="@{/images/monster7.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=1110100">Green Mushroom</a>
+                                </td>
+                                <td>
+                                    15
+                                </td>
+                                <td>
+                                    26
+                                </td>
+                                <td>
+                                    250
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=1110101"><object class="img-responsive"><img th:src="@{/images/monster8.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=1110101">Dark Stump</a>
+                                </td>
+                                <td>
+                                    10
+                                </td>
+                                <td>
+                                    18
+                                </td>
+                                <td>
+                                    250
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=1120100"><object class="img-responsive"><img th:src="@{/images/monster9.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=1120100">Octopus</a>
+                                </td>
+                                <td>
+                                    12
+                                </td>
+                                <td>
+                                    24
+                                </td>
+                                <td>
+                                    200
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=1130100"><object class="img-responsive"><img th:src="@{/images/monster10.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <a href="/lib/monster?id=1130100">Axe Stump</a>
+                                </td>
+                                <td>
+                                    17
+                                </td>
+                                <td>
+                                    30
+                                </td>
+                                <td>
+                                    300
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
