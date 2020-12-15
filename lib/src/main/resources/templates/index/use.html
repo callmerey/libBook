@@ -1,203 +1,225 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list2.html}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
 
 
-head>
-
-head>
+head> head>
 
 <body>
     <div layout:fragment="list_detail">
-        <div     class="col-xs-12">
-                    <table 
-                        class="table text-center table-bordered">
-                                <tbody>
-                                        <tr>
-                                        <th style="width: 10%">
-                                            Image
-                                            </th>
-                                        <th style="width: 20%">
-                                            Name
-                                            </th>
-                                        <th style="width: 80%">
-                                        Description
-                                    </th>
-                                    </tr>
-                                        <tr>
-                                        <td>
-                                            <center>
-                                                    <a href="/lib/use?id=2000000">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use1.PNG}" alt=""></object>
-                                                </a>
-                                                </center>
-                                        </td>
-                                    <td>
-                                        <a href="/lib/use?id=2000000">
+        <div class="col-xs-12">
+            <form method="GET">
+                <div class="col-md-6 visible-xs">
+                    <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
+                </div>
+                <div class="col-md-6">
+                    <table class="table borderless">
+                        <tbody>
+                            <tr class="visible-md visible-lg">
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="search" title="Search for an item here" placeholder="Search" class="form-control" type="text" id="search">
+                                </td>
+                                <td>
+                                    <button id="button" class="btn btn-default btn-block">Search</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <table class="table text-center table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 10%">
+                            Image
+                        </th>
+                        <th style="width: 20%">
+                            Name
+                        </th>
+                        <th style="width: 80%">
+                            Description
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000000">
+                                    <object class="img-responsive"> <img th:src="@{/images/use1.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000000">
                             Red Potion
                                 </a>
-                                        </td>
-                                        <td>
-                                                A potion made out of red herbs.<br>Recovers 50 HP.
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>
-                                        <center>
-                                            <a href="/lib/use?id=2000001">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use2.PNG}" alt=""></object>
-                                                    </a>
-                                            </center>
-                                        </td>
-                                            <td>
-                                            <a href="/lib/use?id=2000001">
+                        </td>
+                        <td>
+                            A potion made out of red herbs.<br>Recovers 50 HP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000001">
+                                    <object class="img-responsive"> <img th:src="@{/images/use2.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000001">
                             Orange Potion
                                 </a>
-                                        </td>
-                                    <td>
-                                        A concentrated potion made out of red herbs.<br>Recovers 150 HP.
-                                        </td>
-                                        </tr>
-                                    <tr>
-                                        <td>
-                                                <center>
-                                                <a href="/lib/use?id=2000002">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use3.PNG}" alt=""></object>
-                                                    </a>
-                                            </center>
-                                    </td>
-                                    <td>
-                                            <a href="/lib/use?id=2000002">
+                        </td>
+                        <td>
+                            A concentrated potion made out of red herbs.<br>Recovers 150 HP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000002">
+                                    <object class="img-responsive"> <img th:src="@{/images/use3.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000002">
                                 White Potion
                             </a>
-                                        </td>
-                                            <td>
-                                            A highly-concentrated potion made out of red herbs.<br>Recovers 300 HP.
-                                        </td>
-                                        </tr>
-                                    <tr>
-                                    <td>
-                                        <center>
-                                                <a href="/lib/use?id=2000003">
-                                                        <object class="img-responsive"> <img th:src="@{/images/use4.PNG}" alt=""></object>
-                                                </a>
-                                            </center>
-                                            </td>
-                                        <td>
-                                            <a href="/lib/use?id=2000003">
+                        </td>
+                        <td>
+                            A highly-concentrated potion made out of red herbs.<br>Recovers 300 HP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000003">
+                                    <object class="img-responsive"> <img th:src="@{/images/use4.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000003">
                                 Blue Potion
                             </a>
-                                    </td>
-                                    <td>
-                                            A potion made out of blue herbs.<br>Recovers 100 MP.
-                                            </td>
-                                    </tr>
-                                    <tr>
-                                            <td>
-                                            <center>
-                                                <a href="/lib/use?id=2000004">
-                                                        <object class="img-responsive"> <img th:src="@{/images/use5.PNG}" alt=""></object>
-                                                </a>
-                                        </center>
-                                    </td>
-                                        <td>
-                                                <a href="/lib/use?id=2000004">
+                        </td>
+                        <td>
+                            A potion made out of blue herbs.<br>Recovers 100 MP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000004">
+                                    <object class="img-responsive"> <img th:src="@{/images/use5.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000004">
                             Elixir
                             </a>
-                                            </td>
-                                        <td>
-                                            A legendary potion.<br>Recovers 50% of the HP.<br>Also recovers 50% of MP.
-                                            </td>
-                                    </tr>
-                                <tr>
-                                    <td>
-                                            <center>
-                                                    <a href="/lib/use?id=2000005">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use6.PNG}" alt=""></object>
-                                                </a>
-                                                </center>
-                                        </td>
-                                        <td>
-                                                <a href="/lib/use?id=2000005">
+                        </td>
+                        <td>
+                            A legendary potion.<br>Recovers 50% of the HP.<br>Also recovers 50% of MP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000005">
+                                    <object class="img-responsive"> <img th:src="@{/images/use6.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000005">
                             Power Elixir
                         </a>
-                                    </td>
-                                        <td>
-                                                A legendary potion.<br>Recovers all HP and MP.
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>
-                                            <center>
-                                                    <a href="/lib/use?id=2000006">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use7.PNG}" alt=""></object>
-                                            </a>
-                                        </center>
-                                        </td>
-                                            <td>
-                                            <a href="/lib/use?id=2000006">
+                        </td>
+                        <td>
+                            A legendary potion.<br>Recovers all HP and MP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000006">
+                                    <object class="img-responsive"> <img th:src="@{/images/use7.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000006">
                             Mana Elixir
                                 </a>
-                                        </td>
-                                        <td>
-                                                A legendary potion.<br>Recovers around 300 MP.
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <center>
-                                                <a href="/lib/use?id=2000007">
-                                                    <object class="img-responsive"> <img th:src="@{/images/use8.PNG}" alt=""></object>
-                                                    </a>
-                                            </center>
-                                        </td>
-                                            <td>
-                                            <a href="/lib/use?id=2000007">
+                        </td>
+                        <td>
+                            A legendary potion.<br>Recovers around 300 MP.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000007">
+                                    <object class="img-responsive"> <img th:src="@{/images/use8.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000007">
                         Red Pill
                         </a>
-                                        </td>
-                                            <td>
-                                            A pill of concentrated red potion, which restores 50 HP. You can carry more pills than potions because they're smaller
-                                        </td>
-                                        </tr>
-                                    <tr>
-                                        <td>
-                                                <center>
-                                                <a href="/lib/use?id=2000008">
-                                                <object class="img-responsive"> <img th:src="@{/images/use9.PNG}" alt=""></object>
-                                            </a>
-                                            </center>
-                                            </td>
-                                        <td>
-                                            <a href="/lib/use?id=2000008">
+                        </td>
+                        <td>
+                            A pill of concentrated red potion, which restores 50 HP. You can carry more pills than potions because they're smaller
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000008">
+                                    <object class="img-responsive"> <img th:src="@{/images/use9.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000008">
                                 Orange Pill
                             </a>
-                                        </td>
-                                            <td>
-                                            A pill of concentrated orange potion, which restores 150 HP. You can carry more pills than potions because they're smaller
-                                    </td>
-                                </tr>
-                                    <tr>
-                                            <td>
-                                            <center>
-                                                <a href="/lib/use?id=2000009">
-                                                        <object class="img-responsive"> <img th:src="@{/images/use10.PNG}" alt=""></object>
-                                                </a>
-                                            </center>
-                                            </td>
-                                        <td>
-                                        <a href="/lib/use?id=2000009">
+                        </td>
+                        <td>
+                            A pill of concentrated orange potion, which restores 150 HP. You can carry more pills than potions because they're smaller
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <a href="/lib/use?id=2000009">
+                                    <object class="img-responsive"> <img th:src="@{/images/use10.PNG}" alt=""></object>
+                                </a>
+                            </center>
+                        </td>
+                        <td>
+                            <a href="/lib/use?id=2000009">
                         White Pill
                             </a>
-                                            </td>
-                                        <td>
-                                            A pill of concentrated white potion, which restores 300 HP. You can carry more pills than potions because they're smaller
-                                            </td>
-                                    </tr>
-                                </tbody>
-                                </table>
-                    </di    v>
-         </div>       
-  </body>          
-                
-         </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-                
+                        </td>
+                        <td>
+                            A pill of concentrated white potion, which restores 300 HP. You can carry more pills than potions because they're smaller
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

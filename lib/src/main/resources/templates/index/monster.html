@@ -7,6 +7,32 @@
 <body>
     <div layout:fragment="list_detail">
         <div class="row">
+            <form method="GET">
+                <div class="col-md-6 visible-xs">
+                    <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
+                </div>
+                <div class="col-md-6">
+                    <table class="table borderless">
+                        <tbody>
+                            <tr class="visible-md visible-lg">
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="search" title="Search for an item here" placeholder="Search" class="form-control" type="text" id="search">
+                                </td>
+                                <td>
+                                    <button id="button" class="btn btn-default btn-block">Search</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
             <div id="mainTable">
                 <div class="col-xs-12">
                     <table class="table text-center table-bordered">

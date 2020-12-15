@@ -8,83 +8,9 @@
     <div layout:fragment="section">
         <div class="container">
             <div class="well">
-                <div style="margin-bottom: 15px" class="row">
-                    <form method="GET">
-                        <div id="advanced" class="col-md-6 hidden-xs">
-                            <table class="table borderless">
-                                <tbody>
-                                    <tr>
-                                        <th>
-                                            Filter
-                                        </th>
-                                        <th>
-                                            Order By
-                                        </th>
-                                        <th>
-                                            Sort
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <select name="filter" class="form-control">
-                                                <option value="1" selected="">Any</option>
-                                                <option value="2">Warrior</option>
-                                                <option value="3">Magician</option>
-                                                <option value="4">Archer</option>
-                                                <option value="5">Thief</option>
-                                                <option value="6">Pirate</option>
-                                                <option value="7">Beginner</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select name="order" class="form-control">
-                                                <option value="1" selected="">ID</option>
-                                                <option value="2">Level</option>
-                                                <option value="3">W. Attack</option>
-                                                <option value="4">M. Attack</option>
-                                                <option value="5">Attack Speed</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select name="sort" class="form-control">
-                                                <option value="1" selected="">Ascending</option>
-                                                <option value="2">Descending</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-md-6 visible-xs">
-                            <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
-                        </div>
-                        <div class="col-md-6">
-                            <table class="table borderless">
-                                <tbody>
-                                    <tr class="visible-md visible-lg">
-                                        <th>
-                                            Name
-                                        </th>
-                                        <th>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input name="search" title="Search for an item here" placeholder="Search" class="form-control" type="text" id="search">
-                                        </td>
-                                        <td>
-                                            <button id="button" class="btn btn-default btn-block">Search</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
-                </div>
                 <div id="loading" align="center" hidden=""><img src=""></div>
 
                 <!-- List Detail -->
-
                 <div layout:fragment="list_detail"></div>
 
                 <!-- end list detail -->
