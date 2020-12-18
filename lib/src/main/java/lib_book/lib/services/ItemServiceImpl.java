@@ -1,4 +1,4 @@
-package lib_book.lib.Services;
+package lib_book.lib.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lib_book.lib.Repositories.ItemRepository;
 import lib_book.lib.models.Item;
+import lib_book.lib.repositories.ItemRepository;
 
 @Service
 public class ItemServiceImpl implements ItemService {

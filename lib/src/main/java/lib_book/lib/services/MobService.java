@@ -1,9 +1,9 @@
-package lib_book.lib.Services;
+package lib_book.lib.services;
 
 import java.util.List;
 
 import lib_book.lib.models.Mob;
 
 public interface MobService {
-    public List<Mob> findByName(String name);
+    public List<Mob> findByNameLike(String name);
 }

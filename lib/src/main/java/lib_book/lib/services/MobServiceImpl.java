@@ -1,12 +1,12 @@
-package lib_book.lib.Services;
+package lib_book.lib.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lib_book.lib.Repositories.MobRepository;
 import lib_book.lib.models.Mob;
+import lib_book.lib.repositories.MobRepository;
 
 @Service
 public class MobServiceImpl implements MobService {
@@ -15,7 +15,7 @@ public class MobServiceImpl implements MobService {
     private MobRepository mobRepository;
 
     @Override
-    public List<Mob> findByName(String name) {
+    public List<Mob> findByNameLike(String name) {
         return mobRepository.findByNameLike("%" + name + "%");
     }
 

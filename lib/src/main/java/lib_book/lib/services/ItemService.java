@@ -1,4 +1,4 @@
-package lib_book.lib.Services;
+package lib_book.lib.services;
 
 import java.util.List;
 

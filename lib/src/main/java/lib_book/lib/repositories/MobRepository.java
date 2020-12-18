@@ -1,4 +1,4 @@
-package lib_book.lib.Repositories;
+package lib_book.lib.repositories;
 
 import java.util.List;
 

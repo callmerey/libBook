@@ -1,4 +1,4 @@
-package lib_book.lib.util;
+package lib_book.lib.utils;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

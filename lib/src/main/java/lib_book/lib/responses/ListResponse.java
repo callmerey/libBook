@@ -1,9 +1,10 @@
-package lib_book.lib.response;
+package lib_book.lib.responses;
 
 import java.util.List;
-import lib_book.lib.util.Config;
 
-public class ListResponse<E> {
+import lib_book.lib.utils.Config;
+
+public class ListResponse<E> extends Response {
 
     private List<E> pagedList;
     private Integer page, totalPage, limit;
@@ -42,7 +43,7 @@ public class ListResponse<E> {
         } else {
             pagingStr += "?";
         }
-        this.pagingStr = pagingStr + "page=";
+        this.pagingStr = pagingStr + "page=" + page;
 
         // Set totalPage
         this.totalPage = (int) Math.ceil(((double) list.size()) / ((double) limit));
