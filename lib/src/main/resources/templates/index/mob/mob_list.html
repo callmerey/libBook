@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="list_detail">
+        <div class="row">
+            <form method="GET">
+                <div class="col-md-6 visible-xs">
+                    <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
+                </div>
+                <div class="col-md-6">
+                    <table class="table borderless">
+                        <form th:action="@{/mobs}">
+                            <tbody>
+                                <tr class="visible-md visible-lg">
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input name="search" title="Search for an item here" placeholder="Search" class="form-control" type="text" id="search" th:name="name">
+                                    </td>
+                                    <td>
+                                        <input type="submit" id="button" class="btn btn-default btn-block"></input>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+            </form>
+            <div id="mainTable">
+                <div class="col-xs-12">
+                    <table class="table text-center table-bordered">
+                        <tbody>
+                            <tr>
+                                <th style="width: 30%">
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th style="width: 10%">
+                                    Level
+                                </th>
+                                <th style="width: 10%">
+                                    EXP
+                                </th>
+                                <th style="width: 10%">
+                                    HP
+                                </th>
+                            </tr>
+                            <tr th:each="m : ${list}">
+                                <td>
+                                    <center>
+                                        <a href="/lib/monster?id=0100100"><object class="img-responsive"><img th:src="@{/images/monster1.PNG}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td th:text="${m.name}"></td>
+                                <td th:text="${m.level}"></td>
+                                <td th:text="${m.exp}"></td>
+                                <td th:text="${m.maxHp}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
