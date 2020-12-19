@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main.html}">
 
 <head>
 </head>
@@ -9,17 +10,23 @@
         <div class="container">
             <div class="well">
                 <div id="loading" align="center" hidden=""><img src=""></div>
+
                 <!-- List Detail -->
                 <div layout:fragment="list_detail"></div>
 
                 <!-- end list detail -->
+
                 <div id="list_page" th:if="${res.totalPage> 0}">
                     <nav class="nav-page" aria-label="...">
                         <div>
-                            <form class="page" th:action="@{'' + ${res.pagingStr}}">
+                            <form class="page" th:action="@{'' + ${res.pagingStr}}" th:object="${res.query}">
                                 <span>
-                                        <input class="input_page" type="text" th:name="inputPage" placeholder="Số trang" />
-                                        <input class="submit_page" type="submit" value="Đi đến" />
+                                    <input type="hidden" th:if="${res.query.name != ''}" th:name="name"
+                                        th:value="*{name}" />
+                                    <input type="hidden" th:if="${res.query.typeId != 0}" th:name="typeId"
+                                        th:value="*{typeId}" />
+                                    <input class="input_page" type="text" th:name="inputPage" placeholder="Số trang" />
+                                    <input class="submit_page" type="submit" value="Đi đến" />
                                 </span>
                             </form>
                         </div>
@@ -27,32 +34,46 @@
 
                         <ul class="pagination pagination-lg" th:if="${res.totalPage < 8}">
                             <li th:if="${res.totalPage> 1}" class="page-item">
-                                <a class="page-link selected" th:href="@{''+ ${res.pagingStr} + '0'}" th:unless="${res.page != 0}">1</a>
-                                <a class="page-link" th:href="@{''+ ${res.pagingStr} + '0'}" th:if="${res.page != 0}">1</a>
+                                <a class="page-link selected" th:href="@{''+ ${res.pagingStr} + '0'}"
+                                    th:unless="${res.page != 0}">1</a>
+                                <a class="page-link" th:href="@{''+ ${res.pagingStr} + '0'}"
+                                    th:if="${res.page != 0}">1</a>
                             </li>
                             <li th:if="${res.totalPage> 1}" class="page-item">
-                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '1'}" th:unless="${res.page != 1}">2</a>
-                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '1'}" th:if="${res.page != 1}">2</a>
+                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '1'}"
+                                    th:unless="${res.page != 1}">2</a>
+                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '1'}"
+                                    th:if="${res.page != 1}">2</a>
                             </li>
                             <li class="page-item" th:if="${res.totalPage>2}">
-                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '2'}" th:unless="${res.page != 2}">3</a>
-                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '2'}" th:if="${res.page != 2}">3</a>
+                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '2'}"
+                                    th:unless="${res.page != 2}">3</a>
+                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '2'}"
+                                    th:if="${res.page != 2}">3</a>
                             </li>
                             <li class="page-item" th:if="${res.totalPage> 3}">
-                                <a class="page-link selected" th:href="@{'' + ${res.pagingStr} + '3'}" th:unless="${res.page != 3}">4</a>
-                                <a class="page-link" th:href="@{'' + ${res.pagingStr} + '3'}" th:if="${res.page != 3}">4</a>
+                                <a class="page-link selected" th:href="@{'' + ${res.pagingStr} + '3'}"
+                                    th:unless="${res.page != 3}">4</a>
+                                <a class="page-link" th:href="@{'' + ${res.pagingStr} + '3'}"
+                                    th:if="${res.page != 3}">4</a>
                             </li>
                             <li class="page-item" th:if="${res.totalPage>4}">
-                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '4'}" th:unless="${res.page != 4}">5</a>
-                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '4'}" th:if="${res.page != 4}">5</a>
+                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '4'}"
+                                    th:unless="${res.page != 4}">5</a>
+                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '4'}"
+                                    th:if="${res.page != 4}">5</a>
                             </li>
                             <li class="page-item" th:if="${res.totalPage>5}">
-                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '5'}" th:unless="${res.page != 5}">6</a>
-                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '5'}" th:if="${res.page != 5}">6</a>
+                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '5'}"
+                                    th:unless="${res.page != 5}">6</a>
+                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '5'}"
+                                    th:if="${res.page != 5}">6</a>
                             </li>
                             <li class="page-item" th:if="${res.totalPage>6}">
-                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '6'}" th:unless="${res.page != 6}">7</a>
-                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '6'}" th:if="${res.page != 6}">7</a>
+                                <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '6'}"
+                                    th:unless="${res.page != 6}">7</a>
+                                <a class="page-link" th:href="@{'' +${res.pagingStr} + '6'}"
+                                    th:if="${res.page != 6}">7</a>
                             </li>
                         </ul>
 
@@ -60,12 +81,16 @@
 
                             <ul class="pagination pagination-lg" th:unless="${res.page > 1}">
                                 <li class="page-item">
-                                    <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '0'}" th:unless="${res.page != 0}">1</a>
-                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + '0'}" th:if="${res.page != 0}">1</a>
+                                    <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '0'}"
+                                        th:unless="${res.page != 0}">1</a>
+                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + '0'}"
+                                        th:if="${res.page != 0}">1</a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '1'}" th:unless="${res.page != 1}">2</a>
-                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + '1'}" th:if="${res.page != 1}">2</a>
+                                    <a class="page-link selected" th:href="@{'' +${res.pagingStr} + '1'}"
+                                        th:unless="${res.page != 1}">2</a>
+                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + '1'}"
+                                        th:if="${res.page != 1}">2</a>
                                 </li>
                                 <li class="page-item">
                                     <a class="page-link" th:href="@{'' +${res.pagingStr} + '2'}">3</a>
@@ -77,13 +102,16 @@
                                     <span th:text="${'...'}" class="page-link"></span>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -3}}" th:text="${res.totalPage - 2}"></a>
+                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -3}}"
+                                        th:text="${res.totalPage - 2}"></a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -2}}" th:text="${res.totalPage - 1}"></a>
+                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -2}}"
+                                        th:text="${res.totalPage - 1}"></a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -1}}" th:text="${res.totalPage}"></a>
+                                    <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.totalPage -1}}"
+                                        th:text="${res.totalPage}"></a>
                                 </li>
                             </ul>
 
@@ -91,32 +119,60 @@
 
                                 <ul class="pagination pagination-lg" th:if="${res.page> res.totalPage - 6}">
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-7}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 7}}" th:text="${res.totalPage-6}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-7}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 7}}" th:text="${res.totalPage-6}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-7}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 7}}"
+                                            th:text="${res.totalPage-6}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-7}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 7}}"
+                                            th:text="${res.totalPage-6}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-6}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 6}}" th:text="${res.totalPage-5}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-6}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 6}}" th:text="${res.totalPage-5}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-6}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 6}}"
+                                            th:text="${res.totalPage-5}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-6}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 6}}"
+                                            th:text="${res.totalPage-5}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-5}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 5}}" th:text="${res.totalPage-4}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-5}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 5}}" th:text="${res.totalPage-4}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-5}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 5}}"
+                                            th:text="${res.totalPage-4}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-5}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 5}}"
+                                            th:text="${res.totalPage-4}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-4}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 4}}" th:text="${res.totalPage-3}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-4}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 4}}" th:text="${res.totalPage-3}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-4}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 4}}"
+                                            th:text="${res.totalPage-3}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-4}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 4}}"
+                                            th:text="${res.totalPage-3}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-3}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}" th:text="${res.totalPage-2}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-3}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}" th:text="${res.totalPage-2}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-3}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}"
+                                            th:text="${res.totalPage-2}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-3}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}"
+                                            th:text="${res.totalPage-2}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-2}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}" th:text="${res.totalPage-1}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-2}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}" th:text="${res.totalPage-1}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-2}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}"
+                                            th:text="${res.totalPage-1}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-2}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}"
+                                            th:text="${res.totalPage-1}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:if="${res.page != res.totalPage-1}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}" th:text="${res.totalPage}"></a>
-                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-1}" th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}" th:text="${res.totalPage}"></a>
+                                        <a class="page-link" th:if="${res.page != res.totalPage-1}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}"
+                                            th:text="${res.totalPage}"></a>
+                                        <a class="page-link selected" th:unless="${res.page != res.totalPage-1}"
+                                            th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}"
+                                            th:text="${res.totalPage}"></a>
                                     </li>
                                 </ul>
 
@@ -124,28 +180,35 @@
 
                                 <ul class="pagination pagination-lg" th:unless="${res.page> res.totalPage -6}">
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page -1}}" th:text="${res.page}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page -1}}"
+                                            th:text="${res.page}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link selected" th:href="@{'' +${res.pagingStr} + ${res.page}}" th:text="${res.page + 1}"></a>
+                                        <a class="page-link selected" th:href="@{'' +${res.pagingStr} + ${res.page}}"
+                                            th:text="${res.page + 1}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page +1}}" th:text="${res.page +2}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page +1}}"
+                                            th:text="${res.page +2}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page +2}}" th:text="${res.page +3}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} + ${res.page +2}}"
+                                            th:text="${res.page +3}"></a>
                                     </li>
                                     <li class="page-item">
                                         <span th:text="${'...'}" class="page-link"></span>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}" th:text="${res.totalPage -2}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 3}}"
+                                            th:text="${res.totalPage -2}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}" th:text="${res.totalPage -1}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 2}}"
+                                            th:text="${res.totalPage -1}"></a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}" th:text="${res.totalPage}"></a>
+                                        <a class="page-link" th:href="@{'' +${res.pagingStr} +${res.totalPage - 1}}"
+                                            th:text="${res.totalPage}"></a>
                                     </li>
                                 </ul>
 

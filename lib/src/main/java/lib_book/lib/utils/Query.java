@@ -2,15 +2,15 @@ package lib_book.lib.utils;
 
 public class Query {
     private String name;
-    private Integer typeID;
+    private Integer typeId;
 
-    public Query(String name, Integer typeID) {
+    public Query(String name, Integer typeId) {
         this.name = name;
-        this.typeID = typeID;
+        this.typeId = typeId;
     }
 
     public boolean isEmptyQuery() {
-        if (!this.name.equals("") || this.typeID != 0) {
+        if (!this.name.equals("") || this.typeId != 0) {
             return false;
         }
         return true;
@@ -24,8 +24,8 @@ public class Query {
             isFirst = false;
         }
 
-        if (this.typeID != 0) {
-            str = solveResponseVariable(str, "typeId", this.typeID + "", isFirst);
+        if (this.typeId != 0) {
+            str = solveResponseVariable(str, "typeId", this.typeId + "", isFirst);
             isFirst = false;
         }
 
@@ -50,12 +50,12 @@ public class Query {
         this.name = name;
     }
 
-    public Integer getTypeID() {
-        return typeID;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setTypeID(Integer typeID) {
-        this.typeID = typeID;
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
     

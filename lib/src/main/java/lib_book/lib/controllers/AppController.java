@@ -21,7 +21,7 @@ import lib_book.lib.services.MobService;
 import lib_book.lib.utils.Query;
 
 @Controller
-public class MobController {
+public class AppController {
 
     @Autowired
     private MobService mobService;
@@ -50,6 +50,7 @@ public class MobController {
         // Set paging string
         String pagingStr = "/mobs";
         Query query = new Query(name, 0);
+        res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
@@ -86,8 +87,9 @@ public class MobController {
         }
 
         // Set paging string
-        String pagingStr = "/equipments?typeId=" +typeId;
-        Query query = new Query(name, 0);
+        String pagingStr = "/equipments";
+        Query query = new Query(name, typeId);
+        res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
@@ -131,8 +133,8 @@ public class MobController {
         }
 
         // Set paging string
-        String pagingStr = "/items?typeId=" +typeId;
-        Query query = new Query(name, 0);
+        String pagingStr = "/items";
+        Query query = new Query(name, typeId);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
@@ -175,8 +177,9 @@ public class MobController {
         }
 
         // Set paging string
-        String pagingStr = "/weapons?typeId=" +typeId;
-        Query query = new Query(name, 0);
+        String pagingStr = "/weapons";
+        Query query = new Query(name, typeId);
+        res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response

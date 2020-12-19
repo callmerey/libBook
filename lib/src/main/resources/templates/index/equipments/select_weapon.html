@@ -21,8 +21,10 @@
                                         <td>
                                             <select th:name="typeId" class="form-control">
                                                 <option value="0">Tất cả</option>
-                                                <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}">
-                                                </option>
+                                                <div th:each="c : ${categories}">
+                                                    <option th:if="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}"></option>
+                                                    <option th:unless="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}" selected></option>
+                                                </div>
                                             </select>
                                         </td>
                                     </tr>
@@ -32,7 +34,8 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <input name="search" title="Search for an item here" placeholder="Tên Trang bị" class="form-control" type="text" id="search" th:name="name">
+                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên Trang bị" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
+                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên Trang bị" class="form-control" type="text" id="search" th:name="name">
                                         </td>
                                         <td>
                                             <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
