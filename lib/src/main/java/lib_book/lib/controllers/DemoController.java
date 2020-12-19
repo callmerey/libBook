@@ -59,4 +59,9 @@ public class DemoController {
     public String exp(){
         return "index/exptable";
     }
+
+    @RequestMapping("/selweapon")
+    public String selweapon(){
+        return "index/equipments/select_weapon";
+    }
 }

@@ -41,5 +41,10 @@ public class EquipmentCategoryImpl implements EquipmentCategoryService {
         return (List<EquipmentCategory>) equipmentCategoryRepository.findAllById(ids);
     }
 
+    @Override
+    public List<EquipmentCategory> findByEquipmentCategorie(Integer begin, Integer end) {
+        return equipmentCategoryRepository.findByEquipmentCategorie(begin,end);
+    }
+
     
 }

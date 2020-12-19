@@ -117,7 +117,8 @@ sub {
 }
 
 img {
-    border: 0
+    border: 0;
+    height: 50px;
 }
 
 svg:not(:root) {
@@ -3721,8 +3722,9 @@ fieldset[disabled] a.btn {
 
 .btn-default {
     color: #ffffff;
-    background-color: #222222;
-    border-color: #222222
+    background-color: #333333;
+    border-color: #333333;
+    height: 43px;
 }
 
 .btn-default:focus,
@@ -5598,8 +5600,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination {
     display: inline-block;
     padding-left: 0;
-    margin: 21px 0;
-    border-radius: 0
+    border-radius: 0;
+    margin: 0px 0px 0px 200px;
 }
 
 .pagination>li {
@@ -5669,9 +5671,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .pagination-lg>li>a,
 .pagination-lg>li>span {
-    padding: 18px 30px;
-    font-size: 19px;
-    line-height: 1.3333333
+    padding: 5px 15px;
+    font-size: 15px;
+    line-height: 1.333333;
+    margin: 0px 0px 0px 5px;
+    background-color: #333;
+    color: #fff;
+    border-color: #262626;
 }
 
 .pagination-lg>li:first-child>a,

@@ -12,4 +12,9 @@ public interface EquipmentService {
 
     public Equipment findById(Integer id) throws Exception;
 
+    public List<Equipment> findByNameLike(String name);
+
+    List<Equipment> findByTypeAndNameLike(Integer typeId, String name);
+
+    List<Equipment> findByWeapon(Integer begin , Integer end);
 }

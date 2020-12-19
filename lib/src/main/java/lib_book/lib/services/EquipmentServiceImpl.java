@@ -41,4 +41,20 @@ public class EquipmentServiceImpl implements EquipmentService {
 
         return e;
     }    
+
+    @Override
+    public List<Equipment> findByNameLike(String name) {
+        return equipmentRepository.findByNameLike("%" + name + "%");
+    }
+
+    @Override
+    public List<Equipment> findByTypeAndNameLike(Integer typeId, String name){
+        return equipmentRepository.findByTypeAndNameLike(typeId ,"%" + name + "%");
+    }
+
+    @Override
+    public List<Equipment> findByWeapon(Integer begin , Integer end){
+        return equipmentRepository.findByWeapon(begin,end);
+    }
+
 }

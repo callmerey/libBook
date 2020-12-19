@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
 
-<head></head>
+<head>
+</head>
 
 <body>
     <div layout:fragment="list_detail">
+
         <div class="row">
             <form method="GET">
                 <div class="col-md-6 visible-xs">
@@ -12,11 +14,11 @@
                 </div>
                 <div class="col-md-6">
                     <table class="table borderless">
-                        <form th:action="@{/mobs}">
+                        <form th:action="@{/equipment}">
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input name="search" title="Search for an item here" placeholder="Tên Quái vật" class="form-control" type="text" id="search" th:name="name">
+                                        <input name="search" title="Search for an item here" placeholder="Tên trang bị" class="form-control" type="text" id="search" th:name="name">
                                     </td>
                                     <td>
                                         <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
@@ -29,35 +31,39 @@
             </form>
             <div id="mainTable">
                 <div class="col-xs-12">
-                    <table class="table text-center table-bordered">
+                    <table style="font-size: 90%" class="table text-center table-bordered">
                         <tbody>
                             <tr>
-                                <th style="width: 30%">
+                                <th>
                                     Hình ảnh
                                 </th>
                                 <th>
-                                    Tên quái vật
+                                    Tên trang bị
                                 </th>
-                                <th style="width: 10%">
+                                <th>
                                     Cấp độ
                                 </th>
-                                <th style="width: 10%">
-                                    Kinh nghiệm
+                                <th>
+                                    Tốc chạy
                                 </th>
-                                <th style="width: 10%">
-                                    Máu
+                                <th>
+                                    Tấn công
+                                </th>
+                                <th class="hidden-xs">
+                                    Slots
                                 </th>
                             </tr>
-                            <tr th:each="m : ${res.pagedList}">
+                            <tr th:each="e : ${res.pagedList}">
                                 <td>
                                     <center>
-                                        <a href="/mob/monster?id=0100100"><object class="img-responsive"><img th:src="@{'/getimage/mob/' + ${m.id}}" alt=""></object></a>
+                                        <a href="/lib/equip?id=01302000"><object class="img-responsive"><img th:src="@{'/getimage/equipment/' + ${e.id}}" alt=""></object></a>
                                     </center>
                                 </td>
-                                <td th:text="${m.name}"></td>
-                                <td th:text="${m.level}"></td>
-                                <td th:text="${m.exp}"></td>
-                                <td th:text="${m.maxHp}"></td>
+                                <td th:text="${e.name}"></td>
+                                <td th:text="${e.reqLevel}"></td>
+                                <td th:text="${e.incSpeed}"></td>
+                                <td th:text="${e.name}"><br>-</td>
+                                <td class="hidden-xs" th:text="${e.name}"> 7</td>
                             </tr>
                         </tbody>
                     </table>

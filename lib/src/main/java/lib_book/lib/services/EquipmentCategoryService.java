@@ -12,4 +12,5 @@ public interface EquipmentCategoryService {
 
     public List<EquipmentCategory> findAllById(Iterable<Integer> ids);
 
+    List<EquipmentCategory> findByEquipmentCategorie(Integer begin , Integer end);
 }

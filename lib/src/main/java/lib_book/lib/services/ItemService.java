@@ -11,4 +11,10 @@ public interface ItemService {
     public List<Item> findAll();
 
     public List<Item> findAllById(Iterable<Integer> ids);
+
+    public List<Item> findByNameLike(String name);
+
+    List<Item> findByTypeAndNameLike(Integer typeId, String name);
+
+    public List<Item> findByType(Integer typeId);
 }

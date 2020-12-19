@@ -36,14 +36,14 @@ public class ListResponse<E> extends Response {
         } else {
             this.page = page;
         }
-
+        
         // Set pagingStr
         if (pagingStr.contains("?")) {
             pagingStr += "&";
         } else {
             pagingStr += "?";
         }
-        this.pagingStr = pagingStr + "page=" + page;
+        this.pagingStr = pagingStr + "page=";
 
         // Set totalPage
         this.totalPage = (int) Math.ceil(((double) list.size()) / ((double) limit));

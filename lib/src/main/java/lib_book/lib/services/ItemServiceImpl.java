@@ -38,5 +38,19 @@ public class ItemServiceImpl implements ItemService {
         return (List<Item>) itemRepository.findAllById(ids);
     }
 
+    @Override
+    public List<Item> findByNameLike(String name) {
+        return itemRepository.findByNameLike("%" + name + "%");
+    }
     
+    @Override
+    public List<Item> findByTypeAndNameLike(Integer typeId, String name){
+        return itemRepository.findByTypeAndNameLike(typeId ,"%" + name + "%");
+    }
+
+    @Override
+    public List<Item> findByType(Integer typeId){
+        return itemRepository.findByType(typeId);
+    }
+
 }
