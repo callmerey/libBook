@@ -11,12 +11,13 @@
                 <div class="col-md-6 visible-xs">
                     <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-61">
                     <table class="table borderless">
-                        <form th:action="@{/equipments}">
+                        <form th:action="@{/items}">
                             <tbody>
                                 <tr>
                                     <td>
+                                        <input type="hidden" th:if="${res.query.typeId != 0}" th:name="typeId" th:value="${res.query.typeId}" />
                                         <input name="search" title="Search for an item here" placeholder="Tên Item" class="form-control" type="text" id="search" th:name="name">
                                     </td>
                                     <td>
@@ -44,12 +45,13 @@
                     <tr th:each="i : ${res.pagedList}">
                         <td>
                             <center>
-                                <a href="/lib/use?id=2000000">
-                                    <object class="img-responsive"> <img th:src="@{'/getimage/item/' + ${i.id}}" alt=""></object>
-                                </a>
+                                <a th:href="@{'/items/' + ${i.id}}"><object class="img-responsive"> <img th:src="@{'/getimage/item/' + ${i.id}}"alt=""></object></a>
                             </center>
                         </td>
-                        <td th:text="${i.name}"></td>
+                        <td>
+                            <center>
+                                <a th:href="@{'/items/' + ${i.id}}"><span th:text="${i.name}"></span></a>
+                            </center>
                         </td>
                         <td th:text="${i.desc}"></td>
                     </tr>

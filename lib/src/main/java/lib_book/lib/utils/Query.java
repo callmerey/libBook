@@ -38,7 +38,7 @@ public class Query {
         } else {
             str += "&";
         }
-        str = str + "?" + varName + "=" + var;
+        str = str + varName + "=" + var;
         return str;
     }
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="section">
+        <div class="container">
+            <div class="well">
+                <div class="row">
+                    <div id="mainTable">
+                        <div class="col-md-4">
+                            <table class="table text-center table-bordered" th:object="${res.object}">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-radius: 25px">
+                                            <div th:text="*{name}"></div>
+                                            <div style="color: #FF9900"></div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #262626">
+                                            <center>
+                                                <object style="width: 40%; image-rendering: pixelated;" class="img-responsive"><img style="width: 50%; height: 50%;" th:src="@{'/getimage/item/' + ${id}}" alt=""></object>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td th:text="*{desc}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sell Price: 1
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="infoTable">
+                            <div class="col-md-8">
+                                <div style="border-radius: 15px" class="panel">
+                                    <div style="border-radius: 15px" class="panel-heading">
+                                        <ul style="margin-bottom: 10px" class="nav nav-tabs">
+                                            <li class="item-tabs active">
+                                                <a>Có thể rớt</a>
+                                            </li>
+                                        </ul>
+                                        <script type="text/javascript">
+                                            document.querySelector('.active.item-tabs>a').removeAttribute('href');
+                                        </script>
+                                    </div>
+                                    <div class="panel panel-body">
+                                        Dropped by nothing.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
