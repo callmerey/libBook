@@ -115,7 +115,8 @@ a:hover {
     color: #fff;
     background-color: #333;
     border-color: #262626;
-    border-width: 2px
+    border-width: 2px;
+    vertical-align: middle;
 }
 
 table th {
