@@ -23,7 +23,7 @@ public class ItemServiceImpl implements ItemService {
         if(opts.isPresent()){
             i = opts.get();
         }else{
-            throw new Exception("Equiment not found");
+            throw new Exception("Item not found");
         }
         return i;
     }

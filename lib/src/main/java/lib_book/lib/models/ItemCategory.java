@@ -1,8 +1,11 @@
 package lib_book.lib.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,9 @@ public class ItemCategory {
     @Column
     private String name;
 
+    @OneToMany(mappedBy="itemCategory")
+    private List<Item> items;
+    
     public int getId() {
         return id;
     }

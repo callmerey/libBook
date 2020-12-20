@@ -1,8 +1,11 @@
 package lib_book.lib.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +17,9 @@ public class EquipmentCategory {
 
     @Column
     private String name;
+
+    @OneToMany(mappedBy="equipmentCategory")
+    private List<Equipment> equipments;
 
     public int getId() {
         return id;
@@ -29,6 +35,14 @@ public class EquipmentCategory {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Equipment> getEquipments() {
+        return equipments;
+    }
+
+    public void setEquipments(List<Equipment> equipments) {
+        this.equipments = equipments;
     }
     
 }

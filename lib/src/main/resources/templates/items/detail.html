@@ -29,11 +29,6 @@
                                     <tr>
                                         <td th:text="*{desc}"></td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            Sell Price: 1
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -43,7 +38,7 @@
                                     <div style="border-radius: 15px" class="panel-heading">
                                         <ul style="margin-bottom: 10px" class="nav nav-tabs">
                                             <li class="item-tabs active">
-                                                <a>Có thể rớt</a>
+                                                <a>Rơi từ</a>
                                             </li>
                                         </ul>
                                         <script type="text/javascript">
@@ -51,7 +46,16 @@
                                         </script>
                                     </div>
                                     <div class="panel panel-body">
-                                        Dropped by nothing.
+                                        <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
+                                            <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
+                                                <a th:href="@{'/mobs/' + ${d.id}}">
+                                                    <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
+                                                    <br/>
+                                                    <span class="name_item" th:text="${d.name}"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Không thấy gì hết</div>
                                     </div>
                                 </div>
                             </div>

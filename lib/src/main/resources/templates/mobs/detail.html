@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="section">
+        <div class="container">
+            <div class="well">
+                <div class="row">
+                    <div id="mainTable">
+                        <div class="col-md-4">
+                            <table class="table text-center table-bordered" th:object="${res.object}">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-radius: 25px" colspan="2" th:text="*{name}"></th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #262626" colspan="2">
+                                            <center><object style="width: 40%; image-rendering: pixelated;" class="img-responsive"><img style="width: 50%; height: 50%;" th:src="@{'/getimage/mob/' + ${id}}" alt=""></object></center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            Cấp:
+                                            <span th:if="*{level > 0}" th:text="*{level}"> </span>
+                                            <span th:unless="*{level > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Kinh nghiệm:
+                                            <span th:if="*{exp > 0}" th:text="*{exp}"> </span>
+                                            <span th:unless="*{exp > 0}">-</span>
+                                        </td>
+
+                                        <td>
+                                            Tốc độ chạy :
+                                            <span th:if="*{speed > 0}" th:text="*{speed}"></span>
+                                            <span th:unless="*{speed > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            HP:
+                                            <span th:if="*{maxHp > 0}" th:text="*{maxHp}"> </span>
+                                            <span th:unless="*{maxHp > 0}">-</span>
+                                        </td>
+                                        <td>
+                                            MP:
+                                            <span th:if="*{maxMp > 0}" th:text="*{maxMp}"> </span>
+                                            <span th:unless="*{maxMp > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Tấn công vật lý:
+                                            <span th:if="*{pad > 0}" th:text="*{pad}"> </span>
+                                            <span th:unless="*{pad > 0}">-</span>
+                                        </td>
+                                        <td>
+                                            Tấn công phép:
+                                            <span th:if="*{mad > 0}" th:text="*{mad}"></span>
+                                            <span th:unless="*{mad > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Kháng vật lý:
+                                            <span th:if="*{pdd > 0}" th:text="*{pdd}"></span>
+                                            <span th:unless="*{pdd > 0}">-</span>
+                                        </td>
+                                        <td>
+                                            Kháng phép:
+                                            <span th:if="*{mdd > 0}" th:text="*{mdd}"></span>
+                                            <span th:unless="*{mdd > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Chính xác:
+                                            <span th:if="*{acc > 0}" th:text="*{acc}"></span>
+                                            <span th:unless="*{acc > 0}">-</span>
+                                        </td>
+                                        <td>
+                                            Né tránh:
+                                            <span th:if="*{eva > 0}" th:text="*{eva}"></span>
+                                            <span th:unless="*{eva > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Hồi phục HP:
+                                            <span th:if="*{hpRecover > 0}" th:text="*{hpRecover}"></span>
+                                            <span th:unless="*{hpRecover > 0}">-</span>
+                                        </td>
+                                        <td>
+                                            Hồi phục MP:
+                                            <span th:if="*{mpRecover > 0}" th:text="*{mpRecover}"></span>
+                                            <span th:unless="*{mpRecover > 0}">-</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-8">
+                            <div style="border-radius: 15px" class="panel">
+                                <div style="border-radius: 15px" class="panel-heading">
+                                    <ul style="margin-bottom: 10px" class="nav nav-tabs">
+                                        <li id="1" class="active">
+                                            <a>Vật phẩm rơi</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="loading" align="center" hidden=""><img src="/static/images/CreepymushText.gif"></div>
+                                <div id="infoTable">
+                                    <div class="panel panel-body">
+
+                                        <div class="no_content" th:if="${res.dropDatas.equipmentList.size() < 1 && res.dropDatas.consumeList.size() < 1 && res.dropDatas.etcList.size() < 1 && res.dropDatas.setupList.size() < 1}">Không thấy gì hết</div>
+
+                                        <div th:if="${res.dropDatas.equipmentList.size() > 0}">
+                                            <p>Trang bị</p>
+                                            <br>
+                                            <div class="box_item">
+                                                <div th:each="d : ${res.dropDatas.equipmentList}">
+                                                    <div class="item_drop">
+                                                        <a th:href="@{'/equipments/' + ${d.id}}">
+                                                            <img class="img_item" th:src="@{'/getimage/equipment/' + ${d.id}}">
+                                                            <br/>
+                                                            <span class="name_item" th:text="${d.name}"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div th:if="${res.dropDatas.consumeList.size() > 0}">
+                                            <p>Tiêu thụ</p>
+                                            <br>
+                                            <div class="box_item">
+                                                <div th:each="d : ${res.dropDatas.consumeList}">
+                                                    <div class="item_drop">
+                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                            <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
+                                                            <br/>
+                                                            <span class="name_item" th:text="${d.name}"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div th:if="${res.dropDatas.setupList.size() > 0}">
+                                            <p>Setup</p>
+                                            <br>
+                                            <div class="box_item">
+                                                <div th:each="d : ${res.dropDatas.setupList}">
+                                                    <div class="item_drop">
+                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                            <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
+                                                            <br/>
+                                                            <span class="name_item" th:text="${d.name}"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div th:if="${res.dropDatas.etcList.size() > 0}">
+                                            <p>Etc</p>
+                                            <br>
+                                            <div class="box_item">
+                                                <div th:each="d : ${res.dropDatas.etcList}">
+                                                    <div class="item_drop">
+                                                        <div class="item_drop"></div>
+                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                            <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
+                                                            <br/>
+                                                            <span class="name_item" th:text="${d.name}"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

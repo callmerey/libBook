@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="section">
+        <div class="container">
+            <div class="well">
+                <div class="row">
+                    <div id="mainTable">
+                        <div class="col-lg-5 col-md-6">
+                            <table class="table table-sm text-center table-bordered" th:object="${res.object}">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-radius: 25px" colspan="6">
+                                            <div th:text="*{name}"></div>
+                                            <div style="color: #FF9900"></div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #262626; vertical-align: middle;" colspan="3">
+                                            <center><object style="width: 40%; image-rendering: pixelated;" class="img-responsive"><img style="width: 100%; height: 100%;" th:src="@{'/getimage/equipment/' + ${id}}" alt=""></object></center>
+                                        </td>
+                                        <td style="border-radius: 15px" colspan="3">
+                                            <span class="title">
+                                                Cấp độ: <span class="number_index" th:text="*{reqLevel}"></span>
+                                            </span>
+                                            <span class="title">
+                                                Sức mạnh: <span class="number_index" th:text="*{reqStr}"></span>
+                                            </span>
+                                            <span class="title">
+                                                Linh hoạt: <span class="number_index" th:text="*{reqDex}"></span>
+                                            </span>
+                                            <span class="title">
+                                                Thông thái: <span class="number_index" th:text="*{reqInt}"></span>
+                                            </span>
+                                            <span class="title">
+                                                May mắn: <span class="number_index" th:text="*{reqLuk}"></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <!--
+<tr style="font-size: 90%">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Beginner
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Warrior
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Magician
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Bowman
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Thief
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                            Pirate
+                                        </td>
+                                    </tr>
+                                    -->
+
+                                    <tr>
+                                        <td style="border-radius: 15px; text-align: left" colspan="6">
+                                            <span class="title">
+                                                Loại : <span class="number_index" th:text="*{equipmentCategory.name}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incAcc > 0}">
+                                                Chính xác: <span class="number_index" th:text="*{incAcc}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incEva > 0}">
+                                                Né tránh: <span class="number_index" th:text="*{incEva}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incJump > 0}">
+                                                Lực nhảy: <span class="number_index" th:text="*{incJump}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incSpeed > 0}">
+                                                Tốc độ: <span class="number_index" th:text="*{incSpeed}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incStr > 0}">
+                                                Sức mạnh: <span class="number_index" th:text="*{incStr}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incDex > 0}">
+                                                Linh hoạt: <span class="number_index" th:text="*{incDex}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incInt > 0}">
+                                                Thông thái: <span class="number_index" th:text="*{incInt}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incLuk > 0}">
+                                                May mắn: <span class="number_index" th:text="*{incLuk}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incHp > 0}">
+                                                HP: <span class="number_index" th:text="*{incHp}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incMp > 0}">
+                                                MP: <span class="number_index" th:text="*{incMp}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incPad > 0}">
+                                                Sát thương vật lý: <span class="number_index" th:text="*{incPad}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incPdd > 0}">
+                                                Kháng vật lý: <span class="number_index" th:text="*{incPdd}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incMad > 0}">
+                                                Sát thương phép: <span class="number_index" th:text="*{incMad}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incMdd > 0}">
+                                                Kháng phép: <span class="number_index" th:text="*{incMdd}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{tuc > 0}">
+                                                Slot: <span class="number_index" th:text="*{tuc}"></span>
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div style="border-radius: 15px" class="panel">
+                                <div style="border-radius: 15px" class="panel-heading">
+                                    <ul style="margin-bottom: 10px;" class="nav nav-tabs">
+                                        <li id="1" class="active">
+                                            <a style="background-color: #1a1a1a;">Rơi từ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="infoTable">
+                                    <div class="panel panel-body">
+                                        <div id="infoTable">
+                                            <div class="panel panel-body">
+                                                <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
+                                                    <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
+                                                        <a th:href="@{'/mobs/' + ${d.id}}">
+                                                            <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
+                                                            <br/>
+                                                            <span class="name_item" th:text="${d.name}"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Không thấy gì hết</div>
+                                            </div>
+                                        </div>
+
+                                        </table>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

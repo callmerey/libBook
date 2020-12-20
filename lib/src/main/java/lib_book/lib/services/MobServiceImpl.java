@@ -30,7 +30,7 @@ public class MobServiceImpl implements MobService{
         if(opts.isPresent()){
             m = opts.get();
         }else{
-            throw new Exception("Equiment not found");
+            throw new Exception("Mob not found");
         }
 
         return m;

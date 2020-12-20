@@ -13,7 +13,7 @@
                     <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
                 </div>
                 <div class="col-md-6">
-                    <form th:action="@{/jewelry}" method="GET">
+                    <form th:action="@{/weapons}" method="GET">
                         <div class="seach_weapon">
                             <table class="table_weapon borderless">
                                 <tbody>
@@ -21,7 +21,7 @@
                                         <td>
                                             <select th:name="typeId" class="form-control">
                                                 <option value="0">Tất cả</option>
-                                                <div th:each="c : ${jewelryCategories}">
+                                                <div th:each="c : ${weaponCategories}">
                                                     <option th:if="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}"></option>
                                                     <option th:unless="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}" selected></option>
                                                 </div>
@@ -34,8 +34,8 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên Trang bị" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
-                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên Trang bị" class="form-control" type="text" id="search" th:name="name">
+                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên vũ khí" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
+                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên vũ khí" class="form-control" type="text" id="search" th:name="name">
                                         </td>
                                         <td>
                                             <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
@@ -74,16 +74,16 @@
                             <tr th:each="e : ${res.pagedList}">
                                 <td>
                                     <center>
-                                        <a th:href="${e.id}"><object class="img-responsive"><img th:src="@{'/getimage/equipment/' + ${e.id}}" alt=""></object></a>
+                                        <a th:href="@{'/equipments/' + ${e.id}}"><object class="img-responsive"><img th:src="@{'/getimage/equipment/' + ${e.id}}" alt=""></object></a>
                                     </center>
                                 </td>
                                 <td>
                                     <center>
-                                        <a th:href="${e.id}"><span th:text="${e.name}"></span></a>
+                                        <a th:href="@{'/equipments/' + ${e.id}}"><span th:text="${e.name}"></span></a>
                                     </center>
                                 </td>
                                 <td th:text="${e.reqLevel}"></td>
-                                <td th:text="${e.incSpeed}"></td>
+                                <td th:text="${e.attSpd}"></td>
                                 <td th:text="${e.name}"><br>-</td>
                                 <td class="hidden-xs" th:text="${e.tuc}"></td>
                             </tr>

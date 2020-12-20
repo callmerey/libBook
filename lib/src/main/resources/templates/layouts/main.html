@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{module/blank_layout.html}">
 
 <head>
+
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                        <a class="navbar-brand" href=""><img style="max-height: 150%" th:src="@{/images/logo.png}"></a>
+                        <a class="navbar-brand" th:href="@{/index}"><img style="max-height: 150%" th:src="@{/images/logo.png}"></a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
@@ -29,12 +30,10 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li class=""><a th:href="@{/weapons}">Vũ khí</a></li>
                                     <li class=""><a th:href="@{/clothes}">Trang phục</a></li>
-                                    <li class=""><a th:href="@{/jewelry}">Trang sức</a></li>
-                                    <li class=""><a href="#">Khác</a></li>
-
+                                    <li class=""><a th:href="@{/accessories}">Trang sức</a></li>
                                 </ul>
                             </li>
-                            <li class=""><a th:href="@{/mobs}">Quái</a></li>
+                            <li class=""><a th:href="@{/mobs}">Quái vật</a></li>
                             <!--     <li class=""><a th:href="@{/npc}">NPC</a></li>
                             <li class=""><a th:href="@{/map}">Map</a></li> -->
                             <li class="dropdown ">

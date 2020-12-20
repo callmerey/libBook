@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,9 +16,13 @@ public class Equipment implements Serializable {
     @Id
     private Integer id;
 
-    @Column(name = "category_id")
-    private Integer typeId;
+    @ManyToOne
+    @JoinColumn(name="category_id", nullable=true)
+    private EquipmentCategory equipmentCategory;
 
+    @Column
+    private Integer attSpd;
+    
     @Column
     private Integer incAcc;
 
@@ -89,14 +95,6 @@ public class Equipment implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
     }
 
     public Integer getIncAcc() {
@@ -265,6 +263,22 @@ public class Equipment implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+	public Integer getAttSpd() {
+		return attSpd;
+	}
+
+	public void setAttSpd(Integer attSpd) {
+		this.attSpd = attSpd;
+	}
+
+    public EquipmentCategory getEquipmentCategory() {
+        return equipmentCategory;
+    }
+
+    public void setEquipmentCategory(EquipmentCategory equipmentCategory) {
+        this.equipmentCategory = equipmentCategory;
     }
 
 }
