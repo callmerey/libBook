@@ -113,38 +113,36 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="loading" align="center" hidden=""><img src="/static/images/CreepymushText.gif"></div>
+
                                 <div id="infoTable">
                                     <div class="panel panel-body">
-
                                         <div class="no_content" th:if="${res.dropDatas.equipmentList.size() < 1 && res.dropDatas.consumeList.size() < 1 && res.dropDatas.etcList.size() < 1 && res.dropDatas.setupList.size() < 1}">Không thấy gì hết</div>
 
                                         <div th:if="${res.dropDatas.equipmentList.size() > 0}">
-                                            <p>Trang bị</p>
+                                            <p class="item_title">Trang bị</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.equipmentList}">
                                                     <div class="item_drop">
-                                                        <a th:href="@{'/equipments/' + ${d.id}}">
+                                                        <a th:attr="href=@{'/equipments/' + ${d.id}}, data-tooltip=${d.name}">
                                                             <img class="img_item" th:src="@{'/getimage/equipment/' + ${d.id}}">
                                                             <br/>
-                                                            <span class="name_item" th:text="${d.name}"></span>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
+
                                         <div th:if="${res.dropDatas.consumeList.size() > 0}">
-                                            <p>Tiêu thụ</p>
+                                            <p class="item_title">Tiêu thụ</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.consumeList}">
                                                     <div class="item_drop">
-                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                        <a th:attr="href=@{'/items/' + ${d.id}}, data-tooltip=${d.name}">
                                                             <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
                                                             <br/>
-                                                            <span class="name_item" th:text="${d.name}"></span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -152,15 +150,14 @@
                                         </div>
 
                                         <div th:if="${res.dropDatas.setupList.size() > 0}">
-                                            <p>Setup</p>
+                                            <p class="item_title">Setup</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.setupList}">
                                                     <div class="item_drop">
-                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                        <a th:attr="href=@{'/items/' + ${d.id}}, data-tooltip=${d.name}">
                                                             <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
                                                             <br/>
-                                                            <span class="name_item" th:text="${d.name}"></span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -168,16 +165,15 @@
                                         </div>
 
                                         <div th:if="${res.dropDatas.etcList.size() > 0}">
-                                            <p>Etc</p>
+                                            <p class="item_title">Etc</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.etcList}">
                                                     <div class="item_drop">
                                                         <div class="item_drop"></div>
-                                                        <a th:href="@{'/items/' + ${d.id}}">
+                                                        <a th:attr="href=@{'/items/' + ${d.id}}, data-tooltip=${d.name}">
                                                             <img class="img_item" th:src="@{'/getimage/item/' + ${d.id}}">
                                                             <br/>
-                                                            <span class="name_item" th:text="${d.name}"></span>
                                                         </a>
                                                     </div>
                                                 </div>

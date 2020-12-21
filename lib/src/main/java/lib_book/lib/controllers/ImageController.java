@@ -26,8 +26,8 @@ import lib_book.lib.services.MobService;
 @RequestMapping("/getimage")
 public class ImageController {
 
-    // private String imageDir = "C:/Users/THANH SON/Desktop/project_lib/Maple images";
-    private String imageDir = "C:/Users/Simon/Desktop/Maple images";
+    private String imageDir = "C:/Users/THANH SON/Desktop/project_lib/Maple images";
+    // private String imageDir = "C:/Users/Simon/Desktop/Maple images";
 
     private String defaultImg = imageDir + "/default.png";
 

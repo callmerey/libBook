@@ -135,17 +135,15 @@
                                             <div class="panel panel-body">
                                                 <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
                                                     <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
-                                                        <a th:href="@{'/mobs/' + ${d.id}}">
+                                                        <a th:attr="href=@{'/mobs/' + ${d.id}}, data-tooltip=${d.name}">
                                                             <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
                                                             <br/>
-                                                            <span class="name_item" th:text="${d.name}"></span>
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Không thấy gì hết</div>
                                             </div>
                                         </div>
-
                                         </table>
                                         <p></p>
                                     </div>

@@ -41,17 +41,13 @@
                                                 <a>Rơi từ</a>
                                             </li>
                                         </ul>
-                                        <script type="text/javascript">
-                                            document.querySelector('.active.item-tabs>a').removeAttribute('href');
-                                        </script>
                                     </div>
                                     <div class="panel panel-body">
                                         <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
                                             <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
-                                                <a th:href="@{'/mobs/' + ${d.id}}">
+                                                <a th:attr="href=@{'/mobs/' + ${d.id}}, data-tooltip=${d.name}">
                                                     <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
                                                     <br/>
-                                                    <span class="name_item" th:text="${d.name}"></span>
                                                 </a>
                                             </div>
                                         </div>
