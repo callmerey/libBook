@@ -14,17 +14,13 @@ import lib_book.lib.models.Equipment;
 public interface EquipmentRepository extends CrudRepository<Equipment, Integer>{
 
     @Query(value    =   "SELECT * FROM equipments "
-                    +   "where category_id = ?1 and name like ?2"
+    +   "where category_id >= ?1 and category_id <= ?2 and name like ?3"
     ,nativeQuery = true)
-    List<Equipment> findByTypeAndNameLike(Integer typeId, String name);
-
-    
-    List<Equipment> findByNameLike(String name);
-
+    List<Equipment> findByNameLike(Integer begin , Integer end, String name);
 
     @Query(value    =   "SELECT * FROM equipments "
-    +   "where category_id >= ?1 and category_id <= ?2"
+    +   "where category_id >= ?1 and category_id <= ?2 and name like ?3 and category_id = ?4"
     ,nativeQuery = true)
-    List<Equipment> findByWeapon(Integer begin , Integer end);
+    List<Equipment> findByTypeAndNameLike(Integer begin , Integer end, String name, Integer typeId);
 
 }

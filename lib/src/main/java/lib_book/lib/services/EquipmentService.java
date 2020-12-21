@@ -12,9 +12,8 @@ public interface EquipmentService {
 
     public Equipment findById(Integer id) throws Exception;
 
-    public List<Equipment> findByNameLike(String name);
+    public List<Equipment> findByNameLike(Integer begin, Integer end, String name);
 
-    List<Equipment> findByTypeAndNameLike(Integer typeId, String name);
+    public List<Equipment> findByTypeAndNameLike(Integer begin, Integer end, String name, Integer typeId);
 
-    List<Equipment> findByWeapon(Integer begin , Integer end);
 }
