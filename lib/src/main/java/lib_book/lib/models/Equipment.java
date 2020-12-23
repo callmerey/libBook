@@ -84,7 +84,13 @@ public class Equipment implements Serializable {
     private Integer reqLuk;
 
     @Column
+    private Integer reqJob;
+
+    @Column
     private String name;
+
+    @Column
+    private String avatar;
     
     public Equipment() {
     }
@@ -279,6 +285,22 @@ public class Equipment implements Serializable {
 
     public void setEquipmentCategory(EquipmentCategory equipmentCategory) {
         this.equipmentCategory = equipmentCategory;
+    }
+
+    public Integer getReqJob() {
+        return reqJob;
+    }
+
+    public void setReqJob(Integer reqJob) {
+        this.reqJob = reqJob;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
 }
