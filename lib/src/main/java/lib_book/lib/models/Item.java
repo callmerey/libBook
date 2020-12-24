@@ -18,6 +18,9 @@ public class Item implements Serializable{
 
     @Column
     private String name;
+
+    @Column
+    private String avatar;
     
     @Column(name = "description")
     private String desc;
@@ -61,5 +64,12 @@ public class Item implements Serializable{
         this.itemCategory = itemCategory;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
     
 }
