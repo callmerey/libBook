@@ -76,7 +76,7 @@ public class ImageController {
         try {
             Mob m = mobService.findById(id);
             String p = defaultImg;
-            String idStr = m.getId() + "";
+            String idStr = m.getAvatar() + "";
             while (idStr.length() < 7) {
                 idStr = "0" + idStr;
             }
@@ -105,7 +105,7 @@ public class ImageController {
         try {
             Equipment e = equipmentService.findById(id);
             String p = defaultImg;
-            String idStr = e.getId() + "";
+            String idStr = e.getAvatar() + "";
             while (idStr.length() < 8) {
                 idStr = "0" + idStr;
             }
