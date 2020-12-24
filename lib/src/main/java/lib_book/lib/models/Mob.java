@@ -55,6 +55,9 @@ public class Mob implements Serializable{
     @Column
     private String name;
 
+    @Column
+    private String avatar;
+
     public Mob() {
     }
 
@@ -176,6 +179,14 @@ public class Mob implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
 }
