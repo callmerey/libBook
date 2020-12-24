@@ -47,7 +47,7 @@ public class ImageController {
         try {
             Item i = itemService.findById(id);
             String p = defaultImg;
-            String idStr = i.getId() + "";
+            String idStr = i.getAvatar() + "";
             while (idStr.length() < 8) {
                 idStr = "0" + idStr;
             }
