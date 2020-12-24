@@ -121,6 +121,12 @@ img {
     height: 50px;
 }
 
+.img_mob {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
 svg:not(:root) {
     overflow: hidden
 }

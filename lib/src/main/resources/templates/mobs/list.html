@@ -51,7 +51,7 @@
                             <tr th:each="m : ${res.pagedList}">
                                 <td>
                                     <center>
-                                        <a th:href="@{'/mobs/' + ${m.id}}"><object class="img-responsive"><img th:src="@{'/getimage/mob/' + ${m.id}}" alt=""></object></a>
+                                        <a th:href="@{'/mobs/' + ${m.id}}"><object class="img-responsive"><img class="img_mob" th:src="@{'/getimage/mob/' + ${m.id}}" alt=""></object></a>
                                     </center>
                                 </td>
                                 <td>

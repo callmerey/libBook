@@ -42,8 +42,8 @@ a {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    background-color: rgb(143, 86, 86);
-    background-color: hsla(0, 39%, 46%, 0.9);
+    background-color: rgb(51, 47, 47);
+    background-color: hsla(0, 0%, 0%, 0.75);
     color: #fff;
     content: attr(data-tooltip);
     text-align: center;
@@ -60,7 +60,7 @@ a {
     left: 0%;
     margin-left: -33px;
     width: 0;
-    border-top: 5px solid rgb(107, 64, 64);
+    border-top: 5px solid rgb(42, 39, 39);
     border-top: 5px solid hsla(163, 8%, 83%, 0.9);
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
@@ -96,7 +96,6 @@ a {
 }
 
 .img_item {
-    width: 35px;
     height: 35px;
     float: left;
     margin: 0px 8px 20px 10px;

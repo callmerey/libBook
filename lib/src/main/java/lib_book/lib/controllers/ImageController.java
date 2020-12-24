@@ -76,11 +76,11 @@ public class ImageController {
         try {
             Mob m = mobService.findById(id);
             String p = defaultImg;
-            String idStr = m.getAvatar() + "";
-            while (idStr.length() < 7) {
-                idStr = "0" + idStr;
+            String avtStr = m.getAvatar() + "";
+            while (avtStr.length() < 7) {
+                avtStr = "0" + avtStr;
             }
-            String imgPath = dir + "/" + idStr + ".png";
+            String imgPath = dir + "/" + avtStr + "." + m.getAvatarType() +".png";
             File img = new File(imgPath);
             if (img.exists()) {
                 p = imgPath;

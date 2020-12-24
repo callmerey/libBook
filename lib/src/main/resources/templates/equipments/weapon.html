@@ -84,7 +84,14 @@
                                 </td>
                                 <td th:text="${e.reqLevel}"></td>
                                 <td th:text="${e.attSpd}"></td>
-                                <td th:text="${e.name}"><br>-</td>
+                                <td>
+                                    Physical Damage:
+                                    <span th:if="${e.incPad > 0}" th:text="${e.incPad}"></span>
+                                    <span th:unless="${e.incPad > 0}">-</span>
+                                    <br> Magical Damage:
+                                    <span th:if="${e.incMad > 0}" th:text="${e.incMad}"></span>
+                                    <span th:unless="${e.incMad > 0}">-</span>
+                                </td>
                                 <td class="hidden-xs" th:text="${e.tuc}"></td>
                             </tr>
                         </tbody>
