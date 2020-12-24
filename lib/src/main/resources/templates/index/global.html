@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
+
+<head>
+</head>
+
+<body>
+    <div layout:fragment="list_detail">
+
+        <div class="row">
+            <form method="GET">
+                <div class="col-md-6 visible-xs">
+                    <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
+                </div>
+                <div class="col-md-6" style="width: 100%;">
+                    <form th:action="@{/all}" method="GET">
+                        <div class="seach_weapon">
+                            <table class="table_weapon borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên cái gì cũng được!" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
+                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên cái gì cũng được!" class="form-control" type="text" id="search" th:name="name">
+                                        </td>
+                                        <td>
+                                            <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </form>
+            <div id="mainTable">
+                <div class="col-xs-12">
+                    <table style="font-size: 90%" class="table text-center table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Hình ảnh
+                                </th>
+                                <th>
+                                    Tên
+                                </th>
+                                <th>
+                                    Loại
+                                </th>
+                            </tr>
+                            <tr th:each="g : ${res.pagedList}">
+                                <td>
+                                    <center>
+                                        <a th:unless="${g.category != 'equipment'}" th:href="@{'/equipments/' + ${g.id}}"><object class="img-responsive"><img th:src="@{'/getimage/equipment/' + ${g.id}}" alt=""></object></a>
+                                        <a th:unless="${g.category != 'item'}" th:href="@{'/items/' + ${g.id}}"><object class="img-responsive"><img th:src="@{'/getimage/item/' + ${g.id}}" alt=""></object></a>
+                                        <a th:unless="${g.category != 'mob'}" th:href="@{'/mobs/' + ${g.id}}"><object class="img-responsive"><img class="img_mob" th:src="@{'/getimage/mob/' + ${g.id}}" alt=""></object></a>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <a th:unless="${g.category != 'equipment'}" th:href="@{'/equipments/' + ${g.id}}"><span th:text="${g.name}"></span></a>
+                                        <a th:unless="${g.category != 'item'}" th:href="@{'/items/' + ${g.id}}"><span th:text="${g.name}"></span></a>
+                                        <a th:unless="${g.category != 'mob'}" th:href="@{'/mobs/' + ${g.id}}"><span th:text="${g.name}"></span></a>
+                                    </center>
+                                </td>
+                                <td th:text="${g.type}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

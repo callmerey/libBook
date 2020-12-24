@@ -81,7 +81,7 @@ public class AppController {
             l.add(g);
         }
 
-        String pagingStr = "/accessories";
+        String pagingStr = "/all";
         Query query = new Query(name, 0);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
@@ -101,6 +101,6 @@ public class AppController {
         
         mm.addAttribute("res", res);
         
-        return "global";
+        return "index/global";
     }
 }

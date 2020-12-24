@@ -26,8 +26,8 @@ import lib_book.lib.services.MobService;
 @RequestMapping("/getimage")
 public class ImageController {
 
-    // private String imageDir = "C:/Users/THANH SON/Desktop/project_lib/Maple images v146";
-    private String imageDir = "C:/Users/Simon/Desktop/Maple images v146";
+    private String imageDir = "C:/Users/THANH SON/Desktop/project_lib/Maple images v146";
+    // private String imageDir = "C:/Users/Simon/Desktop/Maple images v146";
 
     private String defaultImg = imageDir + "/default.png";
 
@@ -43,7 +43,7 @@ public class ImageController {
     @RequestMapping(value = "/item/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<ByteArrayResource> downloadItemImage(@PathVariable Integer id) {
-        String dir = imageDir + "/item";
+        String dir = imageDir + "/Item";
         try {
             Item i = itemService.findById(id);
             String p = defaultImg;
@@ -72,7 +72,7 @@ public class ImageController {
     @RequestMapping(value = "/mob/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<ByteArrayResource> downloadMobImage(@PathVariable Integer id) {
-        String dir = imageDir + "/mob";
+        String dir = imageDir + "/Mob";
         try {
             Mob m = mobService.findById(id);
             String p = defaultImg;
@@ -81,6 +81,7 @@ public class ImageController {
                 avtStr = "0" + avtStr;
             }
             String imgPath = dir + "/" + avtStr + "." + m.getAvatarType() +".png";
+            System.out.println(imgPath);
             File img = new File(imgPath);
             if (img.exists()) {
                 p = imgPath;
@@ -101,7 +102,7 @@ public class ImageController {
     @RequestMapping(value = "/equipment/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<ByteArrayResource> downloadEquipmentImage(@PathVariable Integer id) {
-        String dir = imageDir + "/equipment";
+        String dir = imageDir + "/Equipment";
         try {
             Equipment e = equipmentService.findById(id);
             String p = defaultImg;
