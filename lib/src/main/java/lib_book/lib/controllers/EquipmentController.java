@@ -61,9 +61,9 @@ public class EquipmentController {
         // Set response
         try {
             if (typeId > 0) {
-                l = equipmentService.findByTypeAndNameLike(18, 33, name.trim(), typeId);
+                l = equipmentService.findByTypeAndNameLike(21, 49, name.trim(), typeId);
             } else {
-                l = equipmentService.findByNameLike(18, 33, name.trim());
+                l = equipmentService.findByNameLike(21, 49, name.trim());
             }
 
             res.generateResponse(l, 0, page, pagingStr);
@@ -85,7 +85,7 @@ public class EquipmentController {
 
     @ModelAttribute(name = "weaponCategories")
     public List<EquipmentCategory> getWeaponCategories() {
-        return equipmentCategoryService.findByEquipmentCategorie(17, 33);
+        return equipmentCategoryService.findByEquipmentCategorie(21, 49);
     }
 
     @GetMapping("/clothes")
@@ -161,7 +161,7 @@ public class EquipmentController {
 
         try {
             if (typeId > 0) {
-                l = equipmentService.findByTypeAndNameLike(8, 14, name.trim(), typeId);
+                l = equipmentService.findByTypeAndNameLike(8, 18, name.trim(), typeId);
             } else {
                 l = equipmentService.findByNameLike(8, 14, name.trim());
             }
@@ -185,7 +185,7 @@ public class EquipmentController {
 
     @ModelAttribute(name = "jewelryCategories")
     public List<EquipmentCategory> getJewelryCategories() {
-        return equipmentCategoryService.findByEquipmentCategorie(8, 14);
+        return equipmentCategoryService.findByEquipmentCategorie(8, 18);
     }
 
     // Detail
