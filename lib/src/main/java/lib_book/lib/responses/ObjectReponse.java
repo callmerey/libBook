@@ -1,7 +1,5 @@
 package lib_book.lib.responses;
 
-import java.util.List;
-
 public class ObjectReponse<E> extends Response {
     
     private E object;
