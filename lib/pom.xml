@@ -16,11 +16,7 @@
 	<description>MapleLib</description>
 
 	<properties>
-		<start-class>lib_book.lib.LibApplication</start-class>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>14</java.version>
-		<maven-jar-plugin-version>3.6.3</maven-jar-plugin-version>
 	</properties>
 
 	<dependencies>
