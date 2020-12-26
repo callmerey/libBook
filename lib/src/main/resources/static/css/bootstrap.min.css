@@ -118,7 +118,7 @@ sub {
 
 img {
     border: 0;
-    height: 50px;
+    max-width: 100%;
 }
 
 .img_mob {
@@ -1401,7 +1401,7 @@ html {
 
 body {
     font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.42857143;
     color: #333333;
     background-color: #ffffff

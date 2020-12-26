@@ -21,98 +21,118 @@
                                     </tr>
                                     <tr>
                                         <td style="background-color: #262626; vertical-align: middle;" colspan="3">
-                                            <center><object style="width: 40%; image-rendering: pixelated;" class="img-responsive"><img style="width: 100%; height: 100%;" th:src="@{'/getimage/equipment/' + ${id}}" alt=""></object></center>
+                                            <center><object style="width: 40%; image-rendering: pixelated; margin: 20px 40px 20px 40px;" class="img-responsive"><img style="width: 100%; height: auto;" th:src="@{'/getimage/equipment/' + ${id}}" alt=""></object></center>
                                         </td>
                                         <td style="border-radius: 15px" colspan="3">
                                             <span class="title">
-                                                Cấp độ: <span class="number_index" th:text="*{reqLevel}"></span>
+                                                Req LVL:<span class="number_index" th:text="*{reqLevel}"></span>
                                             </span>
                                             <span class="title">
-                                                Sức mạnh: <span class="number_index" th:text="*{reqStr}"></span>
+                                                Req STR:<span class="number_index" th:text="*{reqStr}"></span>
                                             </span>
                                             <span class="title">
-                                                Linh hoạt: <span class="number_index" th:text="*{reqDex}"></span>
+                                                Req DEX:<span class="number_index" th:text="*{reqDex}"></span>
                                             </span>
                                             <span class="title">
-                                                Thông thái: <span class="number_index" th:text="*{reqInt}"></span>
+                                                Req INT:<span class="number_index" th:text="*{reqInt}"></span>
                                             </span>
                                             <span class="title">
-                                                May mắn: <span class="number_index" th:text="*{reqLuk}"></span>
+                                                Req LUK:<span class="number_index" th:text="*{reqLuk}"></span>
                                             </span>
                                         </td>
                                     </tr>
-                                    <!--
-<tr style="font-size: 90%">
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+
+                                    <tr style="font-size: 90%">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isBgn}">
                                             Beginner
                                         </td>
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isBgn}">
+                                            Beginner
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isW || isBgn}">
                                             Warrior
                                         </td>
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isW || isBgn}">
+                                            Warrior
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isM || isBgn}">
                                             Magician
                                         </td>
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isM || isBgn}">
+                                            Magician
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isB || isBgn}">
                                             Bowman
                                         </td>
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isB || isBgn}">
+                                            Bowman
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isT || isBgn}">
                                             Thief
                                         </td>
-                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900">
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isT || isBgn}">
+                                            Thief
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #FF9900" th:if="*{isP || isBgn}">
+                                            Pirate
+                                        </td>
+                                        <td style="border-radius: 15px;padding-left: 0px;padding-right: 0px;color: #ffffff" th:unless="*{isP || isBgn}">
                                             Pirate
                                         </td>
                                     </tr>
-                                    -->
 
                                     <tr>
                                         <td style="border-radius: 15px; text-align: left" colspan="6">
                                             <span class="title">
-                                                Loại : <span class="number_index" th:text="*{equipmentCategory.name}"></span>
+                                                Category:<span class="number_index" th:text="*{equipmentCategory.name}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{attSpd > 0}">
+                                                Attack Speed:<span class="number_index" th:text="*{attSpd}"></span>
                                             </span>
                                             <span class="title" th:if="*{incAcc > 0}">
-                                                Chính xác: <span class="number_index" th:text="*{incAcc}"></span>
+                                                Accuracy:<span class="number_index" th:text="*{incAcc}"></span>
                                             </span>
                                             <span class="title" th:if="*{incEva > 0}">
-                                                Né tránh: <span class="number_index" th:text="*{incEva}"></span>
+                                                Avoidability:<span class="number_index" th:text="*{incEva}"></span>
                                             </span>
                                             <span class="title" th:if="*{incJump > 0}">
-                                                Lực nhảy: <span class="number_index" th:text="*{incJump}"></span>
+                                                Jump:<span class="number_index" th:text="*{incJump}"></span>
                                             </span>
                                             <span class="title" th:if="*{incSpeed > 0}">
-                                                Tốc độ: <span class="number_index" th:text="*{incSpeed}"></span>
+                                                Speed:<span class="number_index" th:text="*{incSpeed}"></span>
                                             </span>
                                             <span class="title" th:if="*{incStr > 0}">
-                                                Sức mạnh: <span class="number_index" th:text="*{incStr}"></span>
+                                                STR:<span class="number_index" th:text="*{incStr}"></span>
                                             </span>
                                             <span class="title" th:if="*{incDex > 0}">
-                                                Linh hoạt: <span class="number_index" th:text="*{incDex}"></span>
+                                                DEX:<span class="number_index" th:text="*{incDex}"></span>
                                             </span>
                                             <span class="title" th:if="*{incInt > 0}">
-                                                Thông thái: <span class="number_index" th:text="*{incInt}"></span>
+                                                INT:<span class="number_index" th:text="*{incInt}"></span>
                                             </span>
                                             <span class="title" th:if="*{incLuk > 0}">
-                                                May mắn: <span class="number_index" th:text="*{incLuk}"></span>
+                                                LUK:<span class="number_index" th:text="*{incLuk}"></span>
                                             </span>
                                             <span class="title" th:if="*{incHp > 0}">
-                                                HP: <span class="number_index" th:text="*{incHp}"></span>
+                                                HP:<span class="number_index" th:text="*{incHp}"></span>
                                             </span>
                                             <span class="title" th:if="*{incMp > 0}">
-                                                MP: <span class="number_index" th:text="*{incMp}"></span>
+                                                MP:<span class="number_index" th:text="*{incMp}"></span>
                                             </span>
                                             <span class="title" th:if="*{incPad > 0}">
-                                                Sát thương vật lý: <span class="number_index" th:text="*{incPad}"></span>
-                                            </span>
-                                            <span class="title" th:if="*{incPdd > 0}">
-                                                Kháng vật lý: <span class="number_index" th:text="*{incPdd}"></span>
+                                                W.ATT:<span class="number_index" th:text="*{incPad}"></span>
                                             </span>
                                             <span class="title" th:if="*{incMad > 0}">
-                                                Sát thương phép: <span class="number_index" th:text="*{incMad}"></span>
+                                                M.ATT:<span class="number_index" th:text="*{incMad}"></span>
+                                            </span>
+                                            <span class="title" th:if="*{incPdd > 0}">
+                                                W.DEF:<span class="number_index" th:text="*{incPdd}"></span>
                                             </span>
                                             <span class="title" th:if="*{incMdd > 0}">
-                                                Kháng phép: <span class="number_index" th:text="*{incMdd}"></span>
+                                                M.DEF:<span class="number_index" th:text="*{incMdd}"></span>
                                             </span>
                                             <span class="title" th:if="*{tuc > 0}">
-                                                Slot: <span class="number_index" th:text="*{tuc}"></span>
+                                                Number of Upgrades Available:<span class="number_index" th:text="*{tuc}"></span>
                                             </span>
 
                                         </td>
@@ -125,7 +145,7 @@
                                 <div style="border-radius: 15px" class="panel-heading">
                                     <ul style="margin-bottom: 10px;" class="nav nav-tabs">
                                         <li id="1" class="active">
-                                            <a style="background-color: #1a1a1a;">Rơi từ</a>
+                                            <a style="background-color: #1a1a1a;">Dropped by</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -135,13 +155,10 @@
                                             <div class="panel panel-body">
                                                 <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
                                                     <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
-                                                        <a th:attr="href=@{'/mobs/' + ${d.id}}, data-tooltip=${d.name}">
-                                                            <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
-                                                            <br/>
-                                                        </a>
+                                                        <a th:href="@{'/mobs/' + ${d.id}}" th:text="${d.name}"></a>,&nbsp;
                                                     </div>
                                                 </div>
-                                                <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Không thấy gì hết</div>
+                                                <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Nothing</div>
                                             </div>
                                         </div>
                                         </table>

@@ -18,25 +18,25 @@
                                     </tr>
                                     <tr>
                                         <td style="background-color: #262626" colspan="2">
-                                            <center><object style="max-width: 100%; image-rendering: pixelated;" class="img-responsive"><img style="width: auto; height: auto;" th:src="@{'/getimage/mob/' + ${id}}" alt=""></object></center>
+                                            <center><object style="max-width: 100%; image-rendering: pixelated;" class="img-responsive"><img style="max-width: 100%; height: auto;" th:src="@{'/getimage/mob/' + ${id}}" alt=""></object></center>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            Cấp:
+                                            Level:
                                             <span th:if="*{level > 0}" th:text="*{level}"> </span>
                                             <span th:unless="*{level > 0}">-</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Kinh nghiệm:
+                                            EXP:
                                             <span th:if="*{exp > 0}" th:text="*{exp}"> </span>
                                             <span th:unless="*{exp > 0}">-</span>
                                         </td>
 
                                         <td>
-                                            Tốc độ chạy :
+                                            Speed:
                                             <span th:if="*{speed > 0}" th:text="*{speed}"></span>
                                             <span th:unless="*{speed > 0}">-</span>
                                         </td>
@@ -55,48 +55,48 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            Tấn công vật lý:
+                                            W.Att:
                                             <span th:if="*{pad > 0}" th:text="*{pad}"> </span>
                                             <span th:unless="*{pad > 0}">-</span>
                                         </td>
                                         <td>
-                                            Tấn công phép:
+                                            M.Att:
                                             <span th:if="*{mad > 0}" th:text="*{mad}"></span>
                                             <span th:unless="*{mad > 0}">-</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Kháng vật lý:
+                                            W.Def:
                                             <span th:if="*{pdd > 0}" th:text="*{pdd}"></span>
                                             <span th:unless="*{pdd > 0}">-</span>
                                         </td>
                                         <td>
-                                            Kháng phép:
+                                            M.Def:
                                             <span th:if="*{mdd > 0}" th:text="*{mdd}"></span>
                                             <span th:unless="*{mdd > 0}">-</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Chính xác:
+                                            Accuracy:
                                             <span th:if="*{acc > 0}" th:text="*{acc}"></span>
                                             <span th:unless="*{acc > 0}">-</span>
                                         </td>
                                         <td>
-                                            Né tránh:
+                                            Avoidability:
                                             <span th:if="*{eva > 0}" th:text="*{eva}"></span>
                                             <span th:unless="*{eva > 0}">-</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Hồi phục HP:
+                                            HP Recovery:
                                             <span th:if="*{hpRecover > 0}" th:text="*{hpRecover}"></span>
                                             <span th:unless="*{hpRecover > 0}">-</span>
                                         </td>
                                         <td>
-                                            Hồi phục MP:
+                                            MP Recovery:
                                             <span th:if="*{mpRecover > 0}" th:text="*{mpRecover}"></span>
                                             <span th:unless="*{mpRecover > 0}">-</span>
                                         </td>
@@ -109,17 +109,17 @@
                                 <div style="border-radius: 15px" class="panel-heading">
                                     <ul style="margin-bottom: 10px" class="nav nav-tabs">
                                         <li id="1" class="active">
-                                            <a>Vật phẩm rơi</a>
+                                            <a>Drops</a>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div id="infoTable">
                                     <div class="panel panel-body">
-                                        <div class="no_content" th:if="${res.dropDatas.equipmentList.size() < 1 && res.dropDatas.consumeList.size() < 1 && res.dropDatas.etcList.size() < 1 && res.dropDatas.setupList.size() < 1}">Không thấy gì hết</div>
+                                        <div class="no_content" th:if="${res.dropDatas.equipmentList.size() < 1 && res.dropDatas.consumeList.size() < 1 && res.dropDatas.etcList.size() < 1 && res.dropDatas.setupList.size() < 1}">Nothing</div>
 
                                         <div th:if="${res.dropDatas.equipmentList.size() > 0}">
-                                            <p class="item_title">Trang bị</p>
+                                            <p class="item_title">Equipment</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.equipmentList}">
@@ -135,7 +135,7 @@
 
 
                                         <div th:if="${res.dropDatas.consumeList.size() > 0}">
-                                            <p class="item_title">Tiêu thụ</p>
+                                            <p class="item_title">Consume</p>
                                             <br>
                                             <div class="box_item">
                                                 <div th:each="d : ${res.dropDatas.consumeList}">

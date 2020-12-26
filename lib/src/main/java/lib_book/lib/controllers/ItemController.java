@@ -48,7 +48,7 @@ public class ItemController {
 
         // Set paging string
         String pagingStr = "/items";
-        Query query = new Query(name, typeId);
+        Query query = new Query(name, typeId, "", "", 0);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 

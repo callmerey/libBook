@@ -38,20 +38,17 @@
                                     <div style="border-radius: 15px" class="panel-heading">
                                         <ul style="margin-bottom: 10px" class="nav nav-tabs">
                                             <li class="item-tabs active">
-                                                <a>Rơi từ</a>
+                                                <a>Dropped by</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="panel panel-body">
                                         <div class="box_item" th:if="${res.dropDatas.mobList.size() > 0}">
                                             <div class="item_drop" th:each="d : ${res.dropDatas.mobList}">
-                                                <a th:attr="href=@{'/mobs/' + ${d.id}}, data-tooltip=${d.name}">
-                                                    <img class="img_item" th:src="@{'/getimage/mob/' + ${d.id}}">
-                                                    <br/>
-                                                </a>
+                                                <a th:href="@{'/mobs/' + ${d.id}}" th:text="${d.name}"></a>,&nbsp;
                                             </div>
                                         </div>
-                                        <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Không thấy gì hết</div>
+                                        <div class="no_content" th:unless="${res.dropDatas.mobList.size() > 0}">Nothing</div>
                                     </div>
                                 </div>
                             </div>

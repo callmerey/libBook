@@ -19,11 +19,11 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên cái gì cũng được!" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
-                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên cái gì cũng được!" class="form-control" type="text" id="search" th:name="name">
+                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Search anything!" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
+                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Search anything!" class="form-control" type="text" id="search" th:name="name">
                                         </td>
                                         <td>
-                                            <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
+                                            <button type="submit" id="button" class="btn btn-default btn-block">Search</button>
                                         </td>
                                     </tr>
                                 </tbody>

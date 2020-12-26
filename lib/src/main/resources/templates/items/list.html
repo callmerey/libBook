@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/list.html}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/list.html}">
 
 
 <head> </head>
@@ -17,11 +18,19 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input type="hidden" th:if="${res.query.typeId != 0}" th:name="typeId" th:value="${res.query.typeId}" />
-                                        <input name="search" title="Search for an item here" placeholder="Tên vật phẩm" class="form-control" type="text" id="search" th:name="name">
+                                        <input type="hidden" th:if="${res.query.typeId != 0}" th:name="typeId"
+                                            th:value="${res.query.typeId}" />
+                                        <input name="search" th:if="${res.query.name != ''}"
+                                            title="Search for an item here" placeholder="Item's name"
+                                            class="form-control" type="text" id="search" th:name="name"
+                                            th:value="${res.query.name}">
+                                        <input name="search" th:unless="${res.query.name != ''}"
+                                            title="Search for an item here" placeholder="Item's name"
+                                            class="form-control" type="text" id="search" th:name="name">
                                     </td>
                                     <td>
-                                        <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
+                                        <button type="submit" id="button"
+                                            class="btn btn-default btn-block">Search</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -33,19 +42,20 @@
                 <tbody>
                     <tr>
                         <th style="width: 10%">
-                            Hình ảnh
+                            Image
                         </th>
                         <th style="width: 20%">
-                            Tên item
+                            Name
                         </th>
                         <th style="width: 80%">
-                            Chú thích
+                            Description
                         </th>
                     </tr>
                     <tr th:each="i : ${res.pagedList}">
                         <td>
                             <center>
-                                <a th:href="@{'/items/' + ${i.id}}"><object class="img-responsive"> <img th:src="@{'/getimage/item/' + ${i.id}}"alt=""></object></a>
+                                <a th:href="@{'/items/' + ${i.id}}"><object class="img-responsive"> <img
+                                            th:src="@{'/getimage/item/' + ${i.id}}" alt=""></object></a>
                             </center>
                         </td>
                         <td>

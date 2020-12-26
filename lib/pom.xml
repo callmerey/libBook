@@ -11,11 +11,16 @@
 	<groupId>lib_book</groupId>
 	<artifactId>lib</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>lib</name>
-	<description>Demo project for Spring Boot</description>
+	<description>MapleLib</description>
 
 	<properties>
+		<start-class>lib_book.lib.LibApplication</start-class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>14</java.version>
+		<maven-jar-plugin-version>3.6.3</maven-jar-plugin-version>
 	</properties>
 
 	<dependencies>
@@ -32,7 +37,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.22</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

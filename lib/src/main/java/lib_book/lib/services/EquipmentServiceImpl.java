@@ -52,4 +52,14 @@ public class EquipmentServiceImpl implements EquipmentService {
         return equipmentRepository.findByTypeAndNameLike(begin, end,"%" + name + "%", typeId);
     }
 
+    @Override
+    public List<Equipment> findByCashAndNameLike(Integer begin , Integer end, String name, Integer cash) {
+        return equipmentRepository.findByCashAndNameLike(begin, end,"%" + name + "%", cash);
+    }
+
+    @Override
+    public List<Equipment> findByTypeAndCashAndNameLike(Integer begin , Integer end, String name, Integer typeId, Integer cash) {
+        return equipmentRepository.findByTypeAndCashAndNameLike(begin, end,"%" + name + "%", typeId, cash);
+    }
+
 }

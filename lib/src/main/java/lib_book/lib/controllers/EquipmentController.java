@@ -43,7 +43,8 @@ public class EquipmentController {
     public String indexWeapon(ModelMap m, @RequestParam(required = false, defaultValue = "") String name,
             @RequestParam(required = false, defaultValue = "0") Integer typeId,
             @RequestParam(required = false, defaultValue = "0") Integer page,
-            @RequestParam(required = false, defaultValue = "0") Integer inputPage) {
+            @RequestParam(required = false, defaultValue = "0") Integer inputPage,
+            @RequestParam(required = false, defaultValue = "2") Integer cash) {
 
         List<Equipment> l;
         ListResponse<Equipment> res = new ListResponse<>();
@@ -54,18 +55,25 @@ public class EquipmentController {
 
         // Set paging string
         String pagingStr = "/weapons";
-        Query query = new Query(name, typeId);
+        Query query = new Query(name, typeId, "", "", cash);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
         try {
-            if (typeId > 0) {
-                l = equipmentService.findByTypeAndNameLike(21, 49, name.trim(), typeId);
+            if (cash < 2) {
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndCashAndNameLike(21, 49, name.trim(), typeId, cash);
+                } else {
+                    l = equipmentService.findByCashAndNameLike(21, 49, name.trim(), cash);
+                }
             } else {
-                l = equipmentService.findByNameLike(21, 49, name.trim());
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndNameLike(21, 49, name.trim(), typeId);
+                } else {
+                    l = equipmentService.findByNameLike(21, 49, name.trim());
+                }
             }
-
             res.generateResponse(l, 0, page, pagingStr);
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
@@ -92,7 +100,8 @@ public class EquipmentController {
     public String indexSkin(ModelMap m, @RequestParam(required = false, defaultValue = "") String name,
             @RequestParam(required = false, defaultValue = "0") Integer typeId,
             @RequestParam(required = false, defaultValue = "0") Integer page,
-            @RequestParam(required = false, defaultValue = "0") Integer inputPage) {
+            @RequestParam(required = false, defaultValue = "0") Integer inputPage,
+            @RequestParam(required = false, defaultValue = "2") Integer cash) {
 
         List<Equipment> l;
         ListResponse<Equipment> res = new ListResponse<>();
@@ -103,19 +112,26 @@ public class EquipmentController {
 
         // Set paging string clothes
         String pagingStr = "/clothes";
-        Query query = new Query(name, typeId);
+        Query query = new Query(name, typeId, "", "", cash);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
 
         try {
-            if (typeId > 0) {
-                l = equipmentService.findByTypeAndNameLike(1, 7, name.trim(), typeId);
+            if (cash < 2) {
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndCashAndNameLike(1, 7, name.trim(), typeId, cash);
+                } else {
+                    l = equipmentService.findByCashAndNameLike(1, 7, name.trim(), cash);
+                }
             } else {
-                l = equipmentService.findByNameLike(1, 7, name.trim());
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndNameLike(1, 7, name.trim(), typeId);
+                } else {
+                    l = equipmentService.findByNameLike(1, 7, name.trim());
+                }
             }
-
             res.generateResponse(l, 0, page, pagingStr);
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
@@ -142,7 +158,8 @@ public class EquipmentController {
     public String indexJewelry(ModelMap m, @RequestParam(required = false, defaultValue = "") String name,
             @RequestParam(required = false, defaultValue = "0") Integer typeId,
             @RequestParam(required = false, defaultValue = "0") Integer page,
-            @RequestParam(required = false, defaultValue = "0") Integer inputPage) {
+            @RequestParam(required = false, defaultValue = "0") Integer inputPage,
+            @RequestParam(required = false, defaultValue = "2") Integer cash) {
 
         List<Equipment> l;
         ListResponse<Equipment> res = new ListResponse<>();
@@ -153,19 +170,26 @@ public class EquipmentController {
 
         // Set paging string clothes
         String pagingStr = "/accessories";
-        Query query = new Query(name, typeId);
+        Query query = new Query(name, typeId, "", "", cash);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
 
         try {
-            if (typeId > 0) {
-                l = equipmentService.findByTypeAndNameLike(8, 18, name.trim(), typeId);
+            if (cash < 2) {
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndCashAndNameLike(8, 18, name.trim(), typeId, cash);
+                } else {
+                    l = equipmentService.findByCashAndNameLike(8, 18, name.trim(), cash);
+                }
             } else {
-                l = equipmentService.findByNameLike(8, 14, name.trim());
+                if (typeId > 0) {
+                    l = equipmentService.findByTypeAndNameLike(8, 18, name.trim(), typeId);
+                } else {
+                    l = equipmentService.findByNameLike(8, 18, name.trim());
+                }
             }
-
             res.generateResponse(l, 0, page, pagingStr);
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {

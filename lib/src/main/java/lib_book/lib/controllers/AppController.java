@@ -52,7 +52,7 @@ public class AppController {
 
         List<Item> iList = itemService.findByNameLike(name);
 
-        List<Mob> mList = mobService.findByNameLike(name);
+        List<Mob> mList = mobService.findByNameLike(name, "id", "asc");
 
         for (Equipment e : eList) {
             GlobalRecord g = new GlobalRecord();
@@ -82,7 +82,7 @@ public class AppController {
         }
 
         String pagingStr = "/all";
-        Query query = new Query(name, 0);
+        Query query = new Query(name, 0, "", "", 0);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 

@@ -96,9 +96,9 @@ a {
 }
 
 .img_item {
-    height: 35px;
+    height: 30px;
     float: left;
-    margin: 0px 8px 20px 10px;
+    margin: 0px 8px 10px 10px;
 }
 
 .name_item {
@@ -121,7 +121,19 @@ a {
 .seach_weapon {
     display: table;
     width: 100%;
-    margin: 0px 0px 0px 320px;
+    margin: 0px 0px 0px 200px;
+}
+
+.search_mob {
+    display: table;
+    width: 100%;
+    margin: 0px 0px 0px 200px;
+}
+
+.seach_accessory {
+    display: table;
+    width: 100%;
+    margin: 0px 0px 0px 200px;
 }
 
 .page {
@@ -135,6 +147,29 @@ a {
 
 .table_weapon {
     width: 48%;
+    max-width: 100%;
+    margin-bottom: 21px;
+    float: left;
+    margin-right: 10px;
+}
+
+.table_accessory_combobox {
+    width: 20%;
+    max-width: 100%;
+    margin-bottom: 21px;
+    float: left;
+    margin-right: 10px;
+}
+
+.table_mob_combobox {
+    max-width: 100%;
+    margin-bottom: 21px;
+    float: left;
+    margin-right: 10px;
+}
+
+.table_mob_tfield {
+    width: 50%;
     max-width: 100%;
     margin-bottom: 21px;
     float: left;

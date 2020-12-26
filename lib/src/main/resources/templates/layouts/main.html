@@ -26,22 +26,22 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Trang bị <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipments<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li class=""><a th:href="@{/weapons}">Vũ khí</a></li>
-                                    <li class=""><a th:href="@{/clothes}">Trang phục</a></li>
-                                    <li class=""><a th:href="@{/accessories}">Trang sức</a></li>
+                                    <li class=""><a th:href="@{/weapons}">Weapon</a></li>
+                                    <li class=""><a th:href="@{/clothes}">Clothes</a></li>
+                                    <li class=""><a th:href="@{/accessories}">Accessory</a></li>
                                 </ul>
                             </li>
-                            <li class=""><a th:href="@{/mobs}">Quái vật</a></li>
+                            <li class=""><a th:href="@{/mobs}">Monsters</a></li>
                             <!--     <li class=""><a th:href="@{/npc}">NPC</a></li>
                             <li class=""><a th:href="@{/map}">Map</a></li> -->
                             <li class="dropdown ">
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vật phẩm <span class="caret"></span></a>
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Items <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li class=""><a th:href="@{/items?typeId=1}">Tiêu thụ</a></li>
+                                    <li class=""><a th:href="@{/items?typeId=1}">Consume</a></li>
                                     <li class=""><a th:href="@{/items?typeId=2}">Setup</a></li>
-                                    <li class=""><a th:href="@{/items?typeId=3}">Linh tinh</a></li>
+                                    <li class=""><a th:href="@{/items?typeId=3}">Etc</a></li>
                                     <li class=""><a th:href="@{/items?typeId=4}">Cash</a></li>
                                 </ul>
                             </li>
@@ -51,9 +51,9 @@
                         </ul>
                         <form class="navbar-form navbar-right" role="search" th:action="@{/all}" method="GET">
                             <div class="form-group">
-                                <input name="search" placeholder="Tên cái gì cũng được!" class="form-control" type="text" th:name="name">
+                                <input name="search" placeholder="Search anything!" class="form-control" type="text" th:name="name">
                             </div>
-                            <button type="submit" class="btn btn-default">Tìm Kiếm</button>
+                            <button type="submit" class="btn btn-default">Search</button>
                         </form>
                     </div>
                 </div>

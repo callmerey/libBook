@@ -84,13 +84,31 @@ public class Equipment implements Serializable {
     private Integer reqLuk;
 
     @Column
-    private Integer reqJob;
-
-    @Column
     private String name;
 
     @Column
     private String avatar;
+
+    @Column
+    private Integer cash;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isW;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isM;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isB;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isT;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isP;
+
+    @Column(columnDefinition = "bit default 0")
+    private boolean isBgn;
     
     public Equipment() {
     }
@@ -287,20 +305,68 @@ public class Equipment implements Serializable {
         this.equipmentCategory = equipmentCategory;
     }
 
-    public Integer getReqJob() {
-        return reqJob;
-    }
-
-    public void setReqJob(Integer reqJob) {
-        this.reqJob = reqJob;
-    }
-
     public String getAvatar() {
         return avatar;
     }
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Integer getCash() {
+        return cash;
+    }
+
+    public void setCash(Integer cash) {
+        this.cash = cash;
+    }
+
+    public boolean getIsW() {
+        return isW;
+    }
+
+    public void setIsW(boolean isW) {
+        this.isW = isW;
+    }
+
+    public boolean getIsM() {
+        return isM;
+    }
+
+    public void setIsM(boolean isM) {
+        this.isM = isM;
+    }
+
+    public boolean getIsB() {
+        return isB;
+    }
+
+    public void setIsB(boolean isB) {
+        this.isB = isB;
+    }
+
+    public boolean getIsT() {
+        return isT;
+    }
+
+    public void setIsT(boolean isT) {
+        this.isT = isT;
+    }
+
+    public boolean getIsP() {
+        return isP;
+    }
+
+    public void setIsP(boolean isP) {
+        this.isP = isP;
+    }
+
+    public boolean getIsBgn() {
+        return isBgn;
+    }
+
+    public void setIsBgn(boolean isBgn) {
+        this.isBgn = isBgn;
     }
 
 }

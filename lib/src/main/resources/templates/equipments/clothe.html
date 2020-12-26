@@ -12,15 +12,31 @@
                 <div class="col-md-6 visible-xs">
                     <a id="btnAdvanced" class="btn btn-default btn-block visible-xs">Advanced Search</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <form th:action="@{/clothes}" method="GET">
-                        <div class="seach_weapon">
-                            <table class="table_weapon borderless">
+                        <div class="seach_accessory">
+                            <table class="table_accessory_combobox borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <select th:name="cash" class="form-control">
+                                                <option th:if="${res.query.cash != 2}" value="2">All</option>
+                                                <option th:unless="${res.query.cash != 2}" value="2" selected>All</option>
+                                                <option th:if="${res.query.cash != 0}" value="0">Non-cash</option>
+                                                <option th:unless="${res.query.cash != 0}" value="0" selected>Non-cash</option>
+                                                <option th:if="${res.query.cash != 1}" value="1">Cash</option>
+                                                <option th:unless="${res.query.cash != 1}" value="1" selected>Cash</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table_accessory_combobox borderless">
                                 <tbody>
                                     <tr>
                                         <td>
                                             <select th:name="typeId" class="form-control">
-                                                <option value="0">Tất cả</option>
+                                                <option value="0">All</option>
                                                 <div th:each="c : ${clothesCategories}">
                                                     <option th:if="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}"></option>
                                                     <option th:unless="${res.query.typeId != c.id}" th:value="${c.id}" th:text="${c.name}" selected></option>
@@ -34,11 +50,11 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Tên trang phục" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
-                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Tên trang phục" class="form-control" type="text" id="search" th:name="name">
+                                            <input name="search" th:if="${res.query.name != ''}" title="Search for an item here" placeholder="Clothe's name" class="form-control" type="text" id="search" th:name="name" th:value="${res.query.name}">
+                                            <input name="search" th:unless="${res.query.name != ''}" title="Search for an item here" placeholder="Clothe's name" class="form-control" type="text" id="search" th:name="name">
                                         </td>
                                         <td>
-                                            <button type="submit" id="button" class="btn btn-default btn-block">Tìm kiếm</button>
+                                            <button type="submit" id="button" class="btn btn-default btn-block">Search</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -53,13 +69,13 @@
                         <tbody>
                             <tr>
                                 <th>
-                                    Hình ảnh
+                                    Image
                                 </th>
                                 <th>
-                                    Tên trang bị
+                                    Name
                                 </th>
                                 <th>
-                                    Cấp độ
+                                    Level
                                 </th>
                                 <th class="hidden-xs">
                                     Slots

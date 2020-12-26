@@ -16,8 +16,24 @@ public class MobServiceImpl implements MobService{
     private MobRepository mobRepository;
 
     @Override
-    public List<Mob> findByNameLike(String name) {
-        return mobRepository.findByNameLike("%" + name + "%");
+    public List<Mob> findByNameLike(String name, String order, String type) {
+        if (order.equalsIgnoreCase("id")) {
+            if (type.equalsIgnoreCase("asc")) {
+                return mobRepository.findByNameLikeOrderByIdAsc("%" + name + "%");
+            }
+            if (type.equalsIgnoreCase("desc")) {
+                return mobRepository.findByNameLikeOrderByIdDesc("%" + name + "%");
+            }
+        }
+        if (order.equalsIgnoreCase("level")) {
+            if (type.equalsIgnoreCase("asc")) {
+                return mobRepository.findByNameLikeOrderByLevelAsc("%" + name + "%");
+            }
+            if (type.equalsIgnoreCase("desc")) {
+                return mobRepository.findByNameLikeOrderByLevelDesc("%" + name + "%");
+            }
+        }
+        return null;
     }
 
     @Override

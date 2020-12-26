@@ -16,4 +16,7 @@ public interface EquipmentService {
 
     public List<Equipment> findByTypeAndNameLike(Integer begin, Integer end, String name, Integer typeId);
 
+    public List<Equipment> findByCashAndNameLike(Integer begin , Integer end, String name, Integer cash);
+
+    public List<Equipment> findByTypeAndCashAndNameLike(Integer begin , Integer end, String name, Integer typeId, Integer cash);
 }

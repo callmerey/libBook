@@ -41,7 +41,9 @@ public class MobController {
     @GetMapping("/mobs")
     public String indexMob(ModelMap m, @RequestParam(required = false, defaultValue = "") String name,
             @RequestParam(required = false, defaultValue = "0") Integer page,
-            @RequestParam(required = false, defaultValue = "0") Integer inputPage) {
+            @RequestParam(required = false, defaultValue = "0") Integer inputPage,
+            @RequestParam(required = false, defaultValue = "id") String order,
+            @RequestParam(required = false, defaultValue = "asc") String type) {
 
         List<Mob> l;
         ListResponse<Mob> res = new ListResponse<>();
@@ -52,14 +54,14 @@ public class MobController {
 
         // Set paging string
         String pagingStr = "/mobs";
-        Query query = new Query(name, 0);
+        Query query = new Query(name, 0, order, type, 0);
         res.setQuery(query);
         pagingStr = query.generateResponseQuery(pagingStr);
 
         // Set response
 
         try {
-            l = mobService.findByNameLike(name.trim());
+            l = mobService.findByNameLike(name.trim(), order, type);
             res.generateResponse(l, 0, page, pagingStr);
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
@@ -110,7 +112,7 @@ public class MobController {
                         if (d.getItemId() >= 3000000 && d.getItemId() < 4000000) {
                             setupList.add(i);
                         }
-                        if (d.getItemId() >= 2000000 && d.getItemId() < 3000000) {
+                        if (d.getItemId() >= 4000000 && d.getItemId() < 5000000) {
                             etcList.add(i);
                         }
                         

@@ -12,13 +12,13 @@ import lib_book.lib.models.Item;
 public interface ItemRepository extends CrudRepository<Item, Integer>{
 
     @Query(value    =   "SELECT * FROM items "
-                    +   " where category_id = ?1 and name like ?2"
+                    +   " where category_id = ?1 and name like ?2 order by id asc"
     ,nativeQuery = true)
     List<Item> findByTypeAndNameLike(Integer typeId, String name);
 
 
     @Query(value    =   "SELECT * FROM items "
-                    +   " where category_id = ?1"
+                    +   " where category_id = ?1 order by id asc"
     ,nativeQuery = true)
     List<Item> findByType(Integer typeId);
 
