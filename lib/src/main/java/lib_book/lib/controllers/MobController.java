@@ -63,6 +63,7 @@ public class MobController {
         try {
             l = mobService.findByNameLike(name.trim(), order, type);
             res.generateResponse(l, 0, page, pagingStr);
+            res.setAccessingPage("mob");
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
                 // Return error on fail
@@ -137,7 +138,7 @@ public class MobController {
         // Set response
         res.setObject(mob);
         res.setDropDatas(dropDatas);
-        System.out.println(dropDatas);
+        res.setAccessingPage("mob");
 
         // Send response
         m.addAttribute("res", res);

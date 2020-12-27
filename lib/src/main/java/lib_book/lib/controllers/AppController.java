@@ -14,6 +14,7 @@ import lib_book.lib.models.Item;
 import lib_book.lib.models.Mob;
 import lib_book.lib.responses.GlobalRecord;
 import lib_book.lib.responses.ListResponse;
+import lib_book.lib.responses.Response;
 import lib_book.lib.services.EquipmentService;
 import lib_book.lib.services.ItemService;
 import lib_book.lib.services.MobService;
@@ -37,7 +38,9 @@ public class AppController {
     }
 
     @GetMapping("/index")
-    public String index() {
+    public String index(ModelMap m) {
+        Response res = new Response();
+        m.addAttribute("res", res);
         return "index/index";
     }
 

@@ -5,6 +5,7 @@ import lib_book.lib.utils.Query;
 public class Response {
     private String title, message, errorCode;
     private Query query;
+    private String accessingPage;
 
     public Response() {
     }
@@ -39,6 +40,14 @@ public class Response {
 
     public void setQuery(Query query) {
         this.query = query;
+    }
+
+    public String getAccessingPage() {
+        return accessingPage;
+    }
+
+    public void setAccessingPage(String accessingPage) {
+        this.accessingPage = accessingPage;
     }
 
 }

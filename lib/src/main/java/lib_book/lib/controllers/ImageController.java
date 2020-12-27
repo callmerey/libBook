@@ -28,7 +28,9 @@ public class ImageController {
 
     // private String imageDir = "C:/Users/THANH SON/Desktop/project_lib/Maple images v146";
     // private String imageDir = "C:/Users/Simon/Desktop/Maple images v146";
-    private String imageDir = "src/main/resources/maple_images_v146";
+    // private String imageDir = "src/main/resources/maple_images_v146";
+
+    private String imageDir = "C:\\Users\\Administrator\\Desktop\\maple_images_v146";
 
     private String defaultImg = imageDir + "/default.png";
 

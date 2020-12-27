@@ -75,6 +75,7 @@ public class EquipmentController {
                 }
             }
             res.generateResponse(l, 0, page, pagingStr);
+            res.setAccessingPage("equipment");
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
                 // Return error on fail
@@ -133,6 +134,7 @@ public class EquipmentController {
                 }
             }
             res.generateResponse(l, 0, page, pagingStr);
+            res.setAccessingPage("equipment");
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
                 // Return error on fail
@@ -191,6 +193,7 @@ public class EquipmentController {
                 }
             }
             res.generateResponse(l, 0, page, pagingStr);
+            res.setAccessingPage("equipment");
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
                 // Return error on fail
@@ -247,6 +250,7 @@ public class EquipmentController {
         // Set response
         res.setObject(e);
         res.setDropDatas(dropDatas);
+        res.setAccessingPage("equipment");
 
         // Send response
         m.addAttribute("res", res);

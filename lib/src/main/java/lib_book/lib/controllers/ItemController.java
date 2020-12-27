@@ -62,6 +62,7 @@ public class ItemController {
             }
 
             res.generateResponse(l, 0, page, pagingStr);
+            res.setAccessingPage("item");
         } catch (Exception ex) {
             if (!res.getIsEmpty()) {
                 // Return error on fail
@@ -114,6 +115,7 @@ public class ItemController {
         // Set response
         res.setObject(i);
         res.setDropDatas(dropDatas);
+        res.setAccessingPage("item");
 
         // Send response
         m.addAttribute("res", res);
